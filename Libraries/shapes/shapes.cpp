@@ -7,13 +7,13 @@
 #include "shapes.h"
 #include "pixelBuffer.h"
 //GODVERDIKKIE, HET WERKT NIET? ALLEMAAL FOUTJES!h
-pixelBuffer* ppBuf;
+PixelBuffer* ppBuf;
 
 uint8_t setPixelBuffer(PixelBuffer* pb){
 	ppBuf=pb;
 }
 
-uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, unint_16 y2, uint8_t col=250){
+uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col=250){
 	int dx = x2 - x1;
 	int dy = y2 - y1;
 	if (dx > dy) {
@@ -37,7 +37,7 @@ uint8_t fill(uint8_t shape, uint16_t x1=0, uint16_t y1=0, uint16_t x2=0, uint16_
 	return 0;
 }
 
-uint8_t drawRect(uint16_t x3, uint16_t y3, unint_16 x2, uint16_t y2, uint8_t col, uint8_t fill){
+uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2, uint8_t col, uint8_t fill){
 	if(drawLine(x3,y3,x2,y3,col)){
 		return 1;
 	}

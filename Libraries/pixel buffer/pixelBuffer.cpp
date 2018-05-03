@@ -8,7 +8,7 @@
 #include "pixelBuffer.h"
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
-
+#include "stm32_ub_vga_screen.h"
 
 PixelBuffer::PixelBuffer() {
 	// TODO Auto-generated constructor stub
