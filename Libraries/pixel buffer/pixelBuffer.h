@@ -4,10 +4,12 @@
  *  Created on: May 1, 2018
  *      Author: Matthijs Uit den Bogaard
  */
+#include "stm32f4xx.h"
+#include "stm32f4_discovery.h"
 
 #ifndef PROGRAMMA_LIBRARIES_PIXEL_BUFFER_PIXELBUFFER_H_
 #define PROGRAMMA_LIBRARIES_PIXEL_BUFFER_PIXELBUFFER_H_
-#include "stdint.h"
+
 
 
 class PixelBuffer {

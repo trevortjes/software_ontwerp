@@ -19,7 +19,7 @@
 //--------------------------------------------------------------
 // Includes
 //--------------------------------------------------------------
-#include "../../../../programma/Libraries/VGA_driver/Include/stm32_ub_vga_screen.h"
+#include "stm32_ub_vga_screen.h"
 
 
 
