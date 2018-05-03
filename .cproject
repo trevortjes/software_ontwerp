@@ -19,7 +19,7 @@
 							<option id="com.atollic.truestudio.toolchain_options.mcu.673543702" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" value="STM32F407VG" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.656514151" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" value="STMicroelectronics" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.1093395434" isAbstract="false" name="Debug platform" osList="all" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
-							<builder buildPath="${workspace_loc:/software_ontwerp}/Debug" customBuilderProperties="toolChainpathType=1|toolChainpathString=D:\\Programs\\TrueSTUDIO for STM32 9.0.0\\ARMTools\\bin|" id="com.atollic.truestudio.mbs.builder1.562566671" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+							<builder buildPath="${workspace_loc:/software_ontwerp}/Debug" customBuilderProperties="toolChainpathType=1|toolChainpathString=C:\\Program Files\\Atollic\\TrueSTUDIO for STM32 9.0.0\\ARMTools\\bin|" id="org.eclipse.cdt.build.core.internal.builder.1596460146" keepEnvironmentInBuildfile="false" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.as.2137682344" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.endianess.747508127" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1786871606" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -49,7 +49,6 @@
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="USE_STM32F4_DISCOVERY"/>
 									<listOptionValue builtIn="false" value="HSE_VALUE=8000000"/>
-									<listOptionValue builtIn="false" value="../Libraries/VGA_driver"/>
 								</option>
 								<option id="com.atollic.truestudio.gcc.directories.select.596482857" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" valueType="includePath">
 									<listOptionValue builtIn="false" value="../src"/>
@@ -57,7 +56,6 @@
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>
 									<listOptionValue builtIn="false" value="../Utilities/STM32F4-Discovery"/>
-									<listOptionValue builtIn="false" value="../Libraries/VGA_driver"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.36927626" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.917037524" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -91,17 +89,8 @@
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>
 									<listOptionValue builtIn="false" value="../Utilities/STM32F4-Discovery"/>
-									<listOptionValue builtIn="false" value="../Libraries/VGA_driver"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/VGA_driver/Include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/bmp}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/clear screen}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/command buffer}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/command execute}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/pixel buffer}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/screen status}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/shapes}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/text}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/VGA_driver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../Libraries/pixel buffer&quot;"/>
+									<listOptionValue builtIn="false" value="../Libraries/shapes"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.1486864439" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1546936306" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -183,6 +172,7 @@
 							</tool>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.gcc.1526054806" name="C Compiler" superClass="com.atollic.truestudio.exe.release.toolchain.gcc">
 								<option id="com.atollic.truestudio.gcc.symbols.defined.1690714820" name="Defined symbols" superClass="com.atollic.truestudio.gcc.symbols.defined" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="../src"/>
 									<listOptionValue builtIn="false" value="STM32F4XX"/>
 									<listOptionValue builtIn="false" value="STM32F40XX"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
@@ -216,6 +206,7 @@
 							</tool>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.gpp.2066057844" name="C++ Compiler" superClass="com.atollic.truestudio.exe.release.toolchain.gpp">
 								<option id="com.atollic.truestudio.gpp.symbols.defined.1697016386" name="Defined symbols" superClass="com.atollic.truestudio.gpp.symbols.defined" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="../src"/>
 									<listOptionValue builtIn="false" value="STM32F4XX"/>
 									<listOptionValue builtIn="false" value="STM32F40XX"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>

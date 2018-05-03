@@ -5,8 +5,7 @@
  *      Author: Matthijs Uit den Bogaard
  */
 #include "shapes.h"
-#include "pixelBuffer.h"
-//GODVERDIKKIE, HET WERKT NIET? ALLEMAAL FOUTJES!h
+//#include "pixelBuffer.h"
 PixelBuffer* ppBuf;
 
 uint8_t setPixelBuffer(PixelBuffer* pb){
