@@ -2,3 +2,6 @@
 Kan ik pushen
 Hoi
 k
+goedzo
+hoi 
+i
