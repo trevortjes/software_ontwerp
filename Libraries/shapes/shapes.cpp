@@ -9,7 +9,7 @@
 //GODVERDIKKIE, HET WERKT NIET? ALLEMAAL FOUTJES!h
 PixelBuffer* ppBuf;
 
-uint8_t setPixelBuffer(PixelBuffer* pb){
+uint8_t setPixelBuffer(Pixel Buffer* pb){
 	ppBuf=pb;
 	return 0;
 }
