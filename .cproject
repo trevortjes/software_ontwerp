@@ -49,6 +49,7 @@
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="USE_STM32F4_DISCOVERY"/>
 									<listOptionValue builtIn="false" value="HSE_VALUE=8000000"/>
+									<listOptionValue builtIn="false" value="../Libraries/VGA_driver"/>
 								</option>
 								<option id="com.atollic.truestudio.gcc.directories.select.596482857" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" valueType="includePath">
 									<listOptionValue builtIn="false" value="../src"/>
@@ -56,7 +57,7 @@
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>
 									<listOptionValue builtIn="false" value="../Utilities/STM32F4-Discovery"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/VGA_driver/Include}&quot;"/>
+									<listOptionValue builtIn="false" value="../Libraries/VGA_driver"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.36927626" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.917037524" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -90,6 +91,7 @@
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>
 									<listOptionValue builtIn="false" value="../Utilities/STM32F4-Discovery"/>
+									<listOptionValue builtIn="false" value="../Libraries/VGA_driver"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/VGA_driver/Include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/bmp}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/clear screen}&quot;"/>
