@@ -13,6 +13,7 @@
 PixelBuffer::PixelBuffer() {
 	// TODO Auto-generated constructor stub
 	size=0;
+
 }
 
 
