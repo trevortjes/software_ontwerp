@@ -1,0 +1,3 @@
+//! clearScreen
+
+uint_8 clearScherm(uint_8 color);

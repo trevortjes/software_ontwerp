@@ -1,0 +1,5 @@
+//! bmp
+
+uint_8 writeBMPROM(uint_8 nr, uint_16 x3, uint_16 y3);
+uint_8 writeBMPRs232(uint_8 *p, uint_16 width, uint_16 height, uint_8 nr, uint_16 x3, uint_16 y3);
+uint_8 writeBMPRs232Anim(uint_8 *p, uint_16 pwidth, uint_16 width, uint_16 height, uint_8 nr, uint_16 x3, uint_16 y3);

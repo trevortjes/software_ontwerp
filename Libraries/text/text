@@ -1,0 +1,8 @@
+//! text
+
+uint_8 font;
+uint_8 color;
+uint_8 style;
+
+uint_8 drawText(uint_16 x, unint_16 y, char* text, uint_8 f, uint_8 col, uint_8 s);
+uint_8 drawChar(uint_16 x, uint_16 y, char c);
