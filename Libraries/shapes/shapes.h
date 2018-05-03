@@ -7,9 +7,9 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 
-uint_8 setPixelBuffer(PixelBuffer* pb);
-uint_8 drawLine(uint_16 x1, uint_16 y1, uint_16 x2, unint_16 y2, uint_8 col);
-uint_8 fill(uint_8 shape, uint_16 x1, uint_16 y1, uint_16 x2, uint_16 y2, uint_16 x3, uint_16 y3, uint_8 col);
-uint_8 drawRect(uint_16 x3, uint_16 y3, unint_16x2, uint_16 y2, uint_8 col, uint_8 fill);
-uint_8 drawTri(uint_16 x1, uint_16 y1, uint_16 x2, uint_16 y2, uint_16 x3, uint_16 y3, uint_8 col, uint_8 fill);
-uint_8 drawEllip(uint_16 x, uint_16 y, uint_16 xrad, uint_16 yrad, uint_8 col, uint_8 fill);
+uint8_t setPixelBuffer(PixelBuffer* pb);
+uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, unint_16 y2, uint8_t col);
+uint8_t fill(uint8_t shape, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint16_t col);
+uint8_t drawRect(uint16_t x3, uint16_t y3, unint_16x2, uint16_t y2, uint8_t col, uint16_t fill);
+uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint16_t col, uint16_t fill);
+uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill);
