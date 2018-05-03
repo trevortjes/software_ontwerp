@@ -38,7 +38,7 @@ uint8_t fill(uint8_t shape, uint16_t x1=0, uint16_t y1=0, uint16_t x2=0, uint16_
 	return 0;
 }
 
-uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2, uint8_t col, uint8_t fill){
+uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2, uint8_t col, uint16_t fill){
 	if(drawLine(x3,y3,x2,y3,col)){
 		return 1;
 	}
