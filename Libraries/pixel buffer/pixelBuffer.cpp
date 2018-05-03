@@ -15,7 +15,7 @@ PixelBuffer::PixelBuffer() {
 }
 
 
-PixelBuffer::uint_8 add(uint_8 col, uint_16 x, uint_16 y){
+PixelBuffer::uint8_t add(uint8_t col, uint16_t x, uint16_t y){
 	color[size]=col;
 	position[size][0]=x;
 	position[size][1]=y;
@@ -25,8 +25,8 @@ PixelBuffer::uint_8 add(uint_8 col, uint_16 x, uint_16 y){
 
 }
 
-PixelBuffer::uint_8 push(){
-	for(uint_8 i; i<size; i++){
+PixelBuffer::uint8_t push(){
+	for(uint8_t i; i<size; i++){
 		UB_VGA_SetPixel(position[i][0], position[i][1], color[i]);
 	}
 	size=0;
