@@ -11,6 +11,7 @@ PixelBuffer* ppBuf;
 
 uint8_t setPixelBuffer(PixelBuffer* pb){
 	ppBuf=pb;
+	return 0;
 }
 
 uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col=250){

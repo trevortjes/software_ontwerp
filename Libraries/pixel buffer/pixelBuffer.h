@@ -14,9 +14,9 @@
 
 class PixelBuffer {
 	private:
-		uint8_t color[255]={};
-		uint16_t position[255][2]={};
-		uint8_t size=0;
+		uint8_t color[255];
+		uint16_t position[255][2];
+		uint8_t size;
 		void clearBuffer();
 	public:
 		PixelBuffer();
