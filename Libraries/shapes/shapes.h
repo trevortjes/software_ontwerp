@@ -2,7 +2,7 @@
  * shapes.c
  *
  *  Created on: May 1, 2018
- *      Author: Matthijs Uit den Bogaard
+ *      Author: Matthijs Uit den Bogaardt
  */
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"

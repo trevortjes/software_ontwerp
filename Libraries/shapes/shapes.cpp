@@ -6,7 +6,7 @@
  */
 #include "shapes.h"
 #include "pixelBuffer.h"
-//GODVERDIKKIE, HET WERKT NIET? ALLEMAAL FOUTJES!
+//GODVERDIKKIE, HET WERKT NIET? ALLEMAAL FOUTJES!h
 pixelBuffer* ppBuf;
 
 uint8_t setPixelBuffer(PixelBuffer* pb){
