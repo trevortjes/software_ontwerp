@@ -7,8 +7,8 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 
-#ifndef PROGRAMMA_LIBRARIES_PIXEL_BUFFER_PIXELBUFFER_H_
-#define PROGRAMMA_LIBRARIES_PIXEL_BUFFER_PIXELBUFFER_H_
+#ifndef PIXELBUFFER_H_
+#define PIXELBUFFER_H_
 
 
 
