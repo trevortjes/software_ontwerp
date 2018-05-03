@@ -19,7 +19,7 @@
 							<option id="com.atollic.truestudio.toolchain_options.mcu.673543702" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" value="STM32F407VG" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.656514151" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" value="STMicroelectronics" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.1093395434" isAbstract="false" name="Debug platform" osList="all" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
-							<builder buildPath="${workspace_loc:/software_ontwerp}/Debug" id="com.atollic.truestudio.mbs.builder1.562566671" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+							<builder buildPath="${workspace_loc:/software_ontwerp}/Debug" customBuilderProperties="toolChainpathType=1|toolChainpathString=D:\\Programs\\TrueSTUDIO for STM32 9.0.0\\ARMTools\\bin|" id="com.atollic.truestudio.mbs.builder1.562566671" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.as.2137682344" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.endianess.747508127" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1786871606" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -56,6 +56,7 @@
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>
 									<listOptionValue builtIn="false" value="../Utilities/STM32F4-Discovery"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/VGA_driver/Include}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.36927626" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.917037524" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -89,6 +90,15 @@
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>
 									<listOptionValue builtIn="false" value="../Utilities/STM32F4-Discovery"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/VGA_driver/Include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/bmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/clear screen}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/command buffer}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/command execute}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/pixel buffer}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/screen status}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/shapes}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/text}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.1486864439" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1546936306" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -215,6 +225,14 @@
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>
 									<listOptionValue builtIn="false" value="../Utilities/STM32F4-Discovery"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/bmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/clear screen}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/command buffer}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/command execute}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/pixel buffer}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/screen status}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/shapes}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/text}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.28780353" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1468217929" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -257,9 +275,29 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="software_ontwerp.com.atollic.truestudio.exe.1538992553" name="Executable" projectType="com.atollic.truestudio.exe"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/software_ontwerp"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/software_ontwerp"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.atollic.truestudio.exe.debug.927628787;com.atollic.truestudio.exe.debug.927628787.;com.atollic.truestudio.exe.debug.toolchain.gcc.425645301;com.atollic.truestudio.gcc.input.1019201245">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.atollic.truestudio.mbs.ARMToolsPerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.atollic.truestudio.exe.debug.927628787;com.atollic.truestudio.exe.debug.927628787.;com.atollic.truestudio.exe.debug.toolchain.gpp.372878210;com.atollic.truestudio.gpp.input.706916585">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.atollic.truestudio.mbs.ARMToolsPerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.atollic.truestudio.configuration.release.690012495;com.atollic.truestudio.configuration.release.690012495.;com.atollic.truestudio.exe.release.toolchain.gcc.1526054806;com.atollic.truestudio.gcc.input.2142679721">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.atollic.truestudio.mbs.ARMToolsPerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.atollic.truestudio.configuration.release.690012495;com.atollic.truestudio.configuration.release.690012495.;com.atollic.truestudio.exe.release.toolchain.gpp.2066057844;com.atollic.truestudio.gpp.input.2050429696">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.atollic.truestudio.mbs.ARMToolsPerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
 </cproject>
