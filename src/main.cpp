@@ -49,11 +49,12 @@
 int main(void) {
 	UB_VGA_Screen_Init();
 	PixelBuffer pBuf;
-	setPixelBuffer(&pBuf);
+	setShapesPixelBuffer(&pBuf);
 	UB_VGA_FillScreen(40);
 	drawRect(40, 80, 80, 40, 200, 1);
 	drawLine(80, 80, 40, 40, 120);
-	drawTri(200, 150, 180, 170, 220, 170, 200, 0);
+	drawLine(80, 40, 40, 80, 120);
+	drawTri(200, 150, 180, 170, 220, 170, 200, 1);
 	pBuf.push();
 	int i = 0;
 
