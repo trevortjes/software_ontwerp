@@ -13,9 +13,13 @@ uint8_t setPixelBuffer(PixelBuffer* pb){
 	return 0;
 }
 
+
+
 uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col=250){
+
 	int dx = x2 - x1;
 	int dy = y2 - y1;
+
 	if (dx > dy) {
 		int y;
 		for (int x = x1; x <= x2; x++) {
@@ -38,6 +42,20 @@ uint8_t fill(uint8_t shape, uint16_t x1=0, uint16_t y1=0, uint16_t x2=0, uint16_
 }
 
 uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2, uint8_t col, uint16_t fill){
+	if(x3==x2||y3==y2){
+		return 2;
+	}
+	if(x3>x2){
+		uint16_t x=x3;
+		x3=x2;
+		x2=x;
+	}
+	if(y3<y2){
+		uint16_t y=y3;
+		y3=y2;
+		y2=y;
+	}
+
 	if(drawLine(x3,y3,x2,y3,col)){
 		return 1;
 	}
@@ -51,12 +69,14 @@ uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2, uint8_t col
 		return 1;
 	}
 	if(fill){
-		//fill hier
+		if(x2!=x3 && y2!=y3)
+			drawRect(x3+1,y3-1,x2-1,y3+1,col,1);
 	}
 	return 0;
 }
 
-uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint8_t col, uint8_t fill){
+uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint16_t col, uint16_t fill){
+
 	if(drawLine(x1,y1,x2,y2,col)){
 		return 1;
 	}

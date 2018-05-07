@@ -28,9 +28,9 @@ SOFTWARE.
 */
 
 /* Includes */
-#include "stm32_ub_vga_screen.h"
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
+#include "stm32_ub_vga_screen.h"
 #include "shapes.h"
 #include "pixelBuffer.h"
 
@@ -54,7 +54,8 @@ int main(void)
 	setPixelBuffer(&pBuf);
 	UB_VGA_FillScreen(40);
 	drawRect(40,40,80,80,200, 0);
-	drawLine(40,40,80,80,200);
+	drawLine(80,80,40,40,200);
+	drawTri(200,150,180,170,220,170,200,0);
 	pBuf.push();
 	int i = 0;
 

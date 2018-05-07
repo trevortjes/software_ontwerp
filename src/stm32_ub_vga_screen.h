@@ -3,9 +3,13 @@
 //--------------------------------------------------------------
 
 //--------------------------------------------------------------
+
+
 #ifndef __STM32F4_UB_VGA_SCREEN_H
 #define __STM32F4_UB_VGA_SCREEN_H
-
+#ifdef __cplusplus
+extern "C"{
+#endif
 
 //--------------------------------------------------------------
 // Includes
@@ -46,22 +50,7 @@
 
 
 
-//--------------------------------------------------------------
-// VGA Structure
-//--------------------------------------------------------------
-typedef struct {
-  uint16_t hsync_cnt;   // counter
-  uint32_t start_adr;   // start_adres
-  uint32_t dma2_cr_reg; // Register constant CR-Register
-}VGA_t;
-VGA_t VGA;
 
-
-
-//--------------------------------------------------------------
-// Display RAM
-//--------------------------------------------------------------
-uint8_t VGA_RAM1[(VGA_DISPLAY_X+1)*VGA_DISPLAY_Y];
 
 
 
@@ -132,5 +121,10 @@ void UB_VGA_Screen_Init(void);
 void UB_VGA_FillScreen(uint8_t color);
 void UB_VGA_SetPixel(uint16_t xp, uint16_t yp, uint8_t color);
 
+#ifdef __cplusplus
+}
+#endif
+
 //--------------------------------------------------------------
 #endif // __STM32F4_UB_VGA_SCREEN_H
+
