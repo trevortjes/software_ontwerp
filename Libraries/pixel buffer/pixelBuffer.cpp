@@ -13,7 +13,6 @@
 PixelBuffer::PixelBuffer() {
 	// TODO Auto-generated constructor stub
 	size = 0;
-
 }
 
 uint8_t PixelBuffer::add(uint8_t col, uint16_t x, uint16_t y) {
@@ -21,14 +20,18 @@ uint8_t PixelBuffer::add(uint8_t col, uint16_t x, uint16_t y) {
 	position[size][0] = x;
 	position[size][1] = y;
 	if (size++ == 255) {
-		push();
+		if(this->push())
+			return 1;
 	}
 	return 0;
 }
 
 uint8_t PixelBuffer::push() {
-	for (uint8_t i; i < size; i++) {
-		UB_VGA_SetPixel(position[i][0], position[i][1], color[i]);
+	for (uint16_t i=0; i < size; i++) {
+		if(UB_VGA_SetPixel(position[i][0], position[i][1], color[i])){
+		}else{
+			return 1;
+		}
 	}
 	size = 0;
 	return 0;

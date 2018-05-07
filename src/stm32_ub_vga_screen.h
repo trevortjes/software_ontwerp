@@ -119,7 +119,7 @@ extern "C"{
 //--------------------------------------------------------------
 void UB_VGA_Screen_Init(void);
 void UB_VGA_FillScreen(uint8_t color);
-void UB_VGA_SetPixel(uint16_t xp, uint16_t yp, uint8_t color);
+uint8_t UB_VGA_SetPixel(uint16_t xp, uint16_t yp, uint8_t color);
 
 #ifdef __cplusplus
 }

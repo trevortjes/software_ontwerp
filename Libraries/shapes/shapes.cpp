@@ -39,15 +39,17 @@ uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
 			error = error + rcy;
 			y=y1+round(error);
 		}
+
 	} else {
 		if (y1 > y2) {
 			drawLine(x2, y2, x1, y1, col);
 		}
-		for (y = y1; y < y2; y++) {
+		for (y = y1; y <= y2; y++) {
 			ppBuf->add(col, x, y);
 			error = error + rcx;
 			x=x1+round(error);
 		}
+
 	}
 
 	return 0;
@@ -83,7 +85,7 @@ uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2,
 	}
 	if (fill) {
 		if (x2 != x3 && y2 != y3)
-			drawRect(x3 + 1, y3 - 1, x2 - 1, y3 + 1, col, 1);
+			drawRect(x3 + 1, y3 - 1, x2 - 1, y2 + 1, col, 1);
 	}
 	return 0;
 }
