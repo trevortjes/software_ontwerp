@@ -10,12 +10,16 @@
 #include "stm32f4_discovery.h"
 #include "stm32_ub_vga_screen.h"
 
+
+
 PixelBuffer::PixelBuffer() {
-	// TODO Auto-generated constructor stub
 	size = 0;
 }
 
 uint8_t PixelBuffer::add(uint8_t col, uint16_t x, uint16_t y) {
+	if(x>320||y>240){
+		return 2;
+	}
 	color[size] = col;
 	position[size][0] = x;
 	position[size][1] = y;
