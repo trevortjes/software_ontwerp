@@ -161,3 +161,121 @@ uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3,
 	return 0;
 }
 
+/*uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill){
+	 //Region 1
+	   p=yrad*yrad-xrad*xrad*yrad+xrad*xrad/4;
+	   xp=0;
+	   yp=yrad;
+	   while(2.0*yrad*yrad*xp <= 2.0*xrad*xrad*yp)
+	   {
+		if(p < 0)
+		{
+			xp++;
+			p = p+2*yrad*yrad*xp+yrad*yrad;
+		}
+		else
+		{
+			xp++;
+			yp--;
+			p = p+2*yrad*yrad*xp-2*xrad*xrad*y-yrad*yrad;
+		}
+		//UB_VGA_SetPixel(xc+x,yc+y,RED);
+		//UB_VGA_SetPixel(xc+x,yc-y,RED);
+		//UB_VGA_SetPixel(xc-x,yc+y,RED);
+		//UB_VGA_SetPixel(xc-x,yc-y,RED);
+		ppBuf->add(col, xc+x,yc+y);
+		ppBuf->add(col, xc+x,yc-y);
+		ppBuf->add(col, xc-x,yc+y);
+		ppBuf->add(col, xc-x,yc-y);
+	   }
+
+	  //Region 2
+	   p=yrad*yrad*(x+0.5)*(x+0.5)+xrad*xrad*(y-1)*(y-1)-xrad*xrad*yrad*yrad;
+	   while(yp > 0)
+	   {
+		if(p <= 0)
+		{
+			xp++;
+			yp--;
+			p = p+2*yrad*yrad*xp-2*xrad*xrad*yp+xrad*xrad;
+		}
+		else
+		{
+			yp--;
+			p = p-2*xrad*xrad*yp+xrad*xrad;
+		}
+		//putpixel(xc+x,yc+y,RED);
+		//putpixel(xc+x,yc-y,RED);
+		//putpixel(xc-x,yc+y,RED);
+		//putpixel(xc-x,yc-y,RED);
+		 ppBuf->add(col, xc+x,yc+y);
+		 ppBuf->add(col, xc+x,yc-y);
+		 ppBuf->add(col, xc-x,yc+y);
+		 ppBuf->add(col, xc-x,yc-y);
+	   }
+}*/
+
+uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill){
+uint16_t xp,yp;
+float p;
+
+
+   //Region 1
+   p=yrad*yrad-xrad*xrad*yrad+xrad*xrad/4;
+   xp=0;
+   yp=yrad;
+   while(2.0*yrad*yrad*xp <= 2.0*xrad*xrad*yp)
+   {
+	if(p < 0)
+	{
+		xp++;
+		p = p+2*yrad*yrad*xp+yrad*yrad;
+	}
+	else
+	{
+		xp++;
+		yp--;
+		p = p+2*yrad*yrad*xp-2*xrad*xrad*yp-yrad*yrad;
+	}
+	//putpixel(x+xp,y+yp,RED);
+	//putpixel(x+xp,y-yp,RED);
+	//putpixel(x-xp,y+yp,RED);
+	//putpixel(x-xp,y-yp,RED);
+
+	ppBuf->add(col, x+xp,y+yp);
+	ppBuf->add(col, x+xp,y-yp);
+	ppBuf->add(col, x-xp,y+yp);
+	ppBuf->add(col, x-xp,y-yp);
+
+   }
+
+  //Region 2
+   p=yrad*yrad*(xp+0.5)*(xp+0.5)+xrad*xrad*(yp-1)*(yp-1)-xrad*xrad*yrad*yrad;
+   while(yp > 0)
+   {
+	if(p <= 0)
+	{
+		xp++;
+		yp--;
+		p = p+2*yrad*yrad*xp-2*xrad*xrad*yp+xrad*xrad;
+	}
+	else
+	{
+		yp--;
+		p = p-2*xrad*xrad*yp+xrad*xrad;
+	}
+	//putpixel(x+xp,y+yp,RED);
+	//putpixel(x+xp,y-yp,RED);
+	//putpixel(x-xp,y+yp,RED);
+	//putpixel(x-xp,y-yp,RED);
+
+	ppBuf->add(col, x+xp,y+yp);
+	ppBuf->add(col, x+xp,y-yp);
+	ppBuf->add(col, x-xp,y+yp);
+	ppBuf->add(col, x-xp,y-yp);
+
+   }
+   return 0;
+}
+
+

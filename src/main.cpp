@@ -56,6 +56,9 @@ int main(void) {
 	drawLine(80, 40, 40, 80, 120);
 	drawLine(319, 1, 319, 240, 120);
 	drawTri(200, 150, 180, 170, 220, 170, 200, 1);
+
+	drawEllip(100, 100, 50, 50, 200, 1);
+
 	pBuf.push();
 	int i = 0;
 
