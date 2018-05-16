@@ -34,6 +34,7 @@ In the interrupt routine the char is send back to the terminal
 
 char string[100];
 int charcounter = 0;
+uint8_t init = 0;
 
 void UART_init(void)
 {
@@ -82,7 +83,7 @@ USART_Init(USART2, &USART_InitStructure);
 USART_ITConfig(USART2,USART_IT_RXNE,ENABLE);
 
 USART_Cmd(USART2, ENABLE);
-
+init = 1;
 }
 
 void UART_putchar(char c)

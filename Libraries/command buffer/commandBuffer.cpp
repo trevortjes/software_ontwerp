@@ -30,6 +30,10 @@ char* CommandBuffer::readRs232()
 void CommandBuffer::initRs232()
 {
 //if rs232 not initialized then initialize
+	if(init != 1)
+	{
+		UART_init();
+	}
 }
 
 void CommandBuffer::writeRs232(const char* text)

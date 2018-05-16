@@ -1,7 +1,7 @@
 #define CR 13 // carriage return char
 #define LF 10 // linefeed char
 
-
+uint8_t init;
 void UART_init(void);
 signed int UART_printf(size_t length, const char *pFormat, ...);
 void UART_INT_init(void);
