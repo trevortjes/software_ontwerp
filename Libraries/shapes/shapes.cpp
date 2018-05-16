@@ -228,7 +228,7 @@ float p;
    return 0;
 }
 
-uint8_t drawEllipfill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill)
+uint8_t drawEllipfill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill)//metalleen fill
 {
 	for(int yp=-yrad; yp<=yrad; yp++)
 	{
