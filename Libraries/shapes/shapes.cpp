@@ -219,7 +219,6 @@ uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t 
 uint16_t xp,yp;
 float p;
 
-
    //Region 1
    p=yrad*yrad-xrad*xrad*yrad+xrad*xrad/4;
    xp=0;
@@ -269,14 +268,14 @@ float p;
 	//putpixel(x-xp,y+yp,RED);
 	//putpixel(x-xp,y-yp,RED);
 
-	ppBuf->add(col, x+xp,y+yp);
-	ppBuf->add(col, x+xp,y-yp);
-	ppBuf->add(col, x-xp,y+yp);
-	ppBuf->add(col, x-xp,y-yp);
+	ppBuf->add(col, (x-1)+xp,y+yp);
+	ppBuf->add(col, (x-1)+xp,y-yp);
+	ppBuf->add(col, (x-1)-xp,y+yp);
+	ppBuf->add(col, (x-1)-xp,y-yp);
 
    }
 
-   if (fill == true && xrad != 0 && yrad != 0)
+   if (fill == true && xrad != 1 && yrad != 1)
    {
 	    return drawEllip(x,y,xrad-1,yrad-1,col, fill);
    }
