@@ -31,6 +31,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32_ub_vga_screen.h"
+#include "text.h"
 #include "shapes.h"
 #include "pixelBuffer.h"
 
@@ -50,14 +51,17 @@ int main(void) {
 	UB_VGA_Screen_Init();
 	PixelBuffer pBuf;
 	setShapesPixelBuffer(&pBuf);
+	setTextPixelBuffer(&pBuf);
 	UB_VGA_FillScreen(40);
 	drawRect(40, 80, 80, 40, 200, 1);
 	drawLine(80, 80, 40, 40, 120);
 	drawLine(80, 40, 40, 80, 120);
 	drawLine(319, 1, 319, 240, 120);
-	drawTri(200, 150, 180, 170, 220, 170, 200, 1);
+	drawTri(200, 150, 180, 170, 220, 170, 200, 1);\
+	drawEllip(100, 100, 50, 50, 120, 0);
+	char s[]="Dit is een test text!!!";
+	drawText(1,1,s,1);
 
-	drawEllip(100, 100, 50, 50, 200, 1);
 
 	pBuf.push();
 	int i = 0;
