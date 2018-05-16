@@ -8,6 +8,9 @@
 #include "commandBuffer.h"
 #include "uart.h"
 
+char stringBuf[100];
+char* command[];
+
 CommandBuffer::CommandBuffer() {
 	// TODO Auto-generated constructor stub
 InitRs232();
@@ -22,11 +25,6 @@ CommandBuffer::~CommandBuffer() {
 	// TODO Auto-generated destructor stub
 }
 
-char* CommandBuffer::readRs232()
-{
-
-}
-
 void CommandBuffer::initRs232()
 {
 //if rs232 not initialized then initialize
@@ -36,10 +34,17 @@ void CommandBuffer::initRs232()
 	}
 }
 
-void CommandBuffer::writeRs232(const char* text)
+char* CommandBuffer::readRs232()
 {
+	UART_gets(stringBuf, 0);
 
 }
+
+void CommandBuffer::writeRs232(const char* text)
+{
+	UART_puts(text);
+}
+
 uint_8 CommandBuffer::executeBuffer()
 {
 
