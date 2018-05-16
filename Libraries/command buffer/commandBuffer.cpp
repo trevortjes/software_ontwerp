@@ -10,12 +10,12 @@
 
 CommandBuffer::CommandBuffer() {
 	// TODO Auto-generated constructor stub
-
+InitRs232();
 }
 
 CommandBuffer::CommandBuffer(char *s)
 {
-
+InitRs232();
 }
 
 CommandBuffer::~CommandBuffer() {
@@ -29,7 +29,7 @@ char* CommandBuffer::readRs232()
 
 void CommandBuffer::initRs232()
 {
-
+//if rs232 not initialized then initialize
 }
 
 void CommandBuffer::writeRs232(const char* text)
