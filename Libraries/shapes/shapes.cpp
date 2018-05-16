@@ -102,62 +102,7 @@ uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3,
 	if (drawLine(x3, y3, x2, y2, col)) {
 		return 1;
 	}
-	if (fill) {
-		uint16_t nx1;
-		uint16_t nx2;
-		uint16_t nx3;
-		uint16_t ny1;
-		uint16_t ny2;
-		uint16_t ny3;
 
-		if (x1 > x2) {
-			nx1 = x1 - 1;
-		} else if(x1 >x3){
-			nx1 = x1 - 1;
-		}else {
-			nx1 = x1 + 1;
-		}
-		if (x2 > x3) {
-			nx2 = x2 - 1;
-		}else if(x2 >x1){
-			nx2 = x2 - 1;
-		} else {
-			nx2 = x2 + 1;
-		}
-		if (x3 > x1) {
-			nx3 = x3 - 1;
-		} else if(x3 >x2){
-			nx3 = x3 - 1;
-		}else {
-			nx3 = x3 + 1;
-		}
-		if (y1 > y2) {
-			ny1 = y1 - 1;
-		} else if(y1 >y3){
-			ny1 = y1 - 1;
-		}else {
-			ny1 = y1 + 1;
-		}
-		if (y2 > y3) {
-			ny2 = y2 - 1;
-		}else if(y2 >y1){
-			ny2 = y2 - 1;
-		} else {
-			ny2 = y2 + 1;
-		}
-		if (y3 > y1) {
-			ny3 = y3 - 1;
-		} else if(y3 >y2){
-			ny3 = y3 - 1;
-		}else {
-			ny3 = y3 + 1;
-		}
-
-		if ((ny1 == ny2 && ny2 == ny3) || (nx1 == nx2 && nx2 == nx3)) {
-			return 0;
-		}
-		drawTri(nx1, ny1, nx2, ny2, nx3, ny3, col, 1);
-	}
 	return 0;
 }
 
