@@ -283,4 +283,17 @@ float p;
    return 0;
 }
 
-
+uint8_t drawEllipfill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill)
+{
+	for(int yp=-yrad; yp<=yrad; yp++)
+	{
+		    for(int xp=-xrad; xp<=xrad; xp++)
+		    {
+		        double dx = (double)xp / (double)xrad;
+		        double dy = (double)yp / (double)yrad;
+		        if(dx*dx+dy*dy <= 1)
+		        	ppBuf->add(col, xp+x,yp+y);
+		        	//setpixel(xp+x,yp+y,col);
+		    }
+	}
+}
