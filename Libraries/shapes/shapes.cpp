@@ -275,6 +275,12 @@ float p;
 	ppBuf->add(col, x-xp,y-yp);
 
    }
+
+   if (fill == true && xrad != 0 && yrad != 0)
+   {
+	   return drawEllip(x,y,xrad-1,yrad-1,col, fill);
+   }
+
    return 0;
 }
 
