@@ -4,7 +4,7 @@
  *  Created on: 16 mei 2018
  *      Author: trevo
  */
-
+/*
 #include "commandBuffer.h"
 #include "uart.h"
 
@@ -48,4 +48,4 @@ void CommandBuffer::writeRs232(const char* text)
 uint_8 CommandBuffer::executeBuffer()
 {
 
-}
+}*/

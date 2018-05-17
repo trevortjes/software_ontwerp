@@ -4,7 +4,7 @@
  *  Created on: 16 mei 2018
  *      Author: Trevor van Ginkel
  */
-
+/*
 #ifndef COMMAND_BUFFER_COMMANDBUFFER_H_
 #define COMMAND_BUFFER_COMMANDBUFFER_H_
 
