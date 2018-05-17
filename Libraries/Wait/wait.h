@@ -7,8 +7,9 @@
 
 #ifndef WAIT_H_
 #define WAIT_H_
+#include "stm32f4xx.h"
+#include "stm32f4_discovery.h"
 
-uint8_t waitInit();
 uint8_t wait(uint16_t ms); //maximaal een minuut wait
 
 
