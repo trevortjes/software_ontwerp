@@ -9,7 +9,7 @@
 #define COMMAND_BUFFER_COMMAND_H_
 
 #include "stm32f4xx.h"
-#include "stm32f4_discovery.h"z
+#include "stm32f4_discovery.h"
 
 class Command {
 private:

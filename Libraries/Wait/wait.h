@@ -10,6 +10,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 
+void waitInit();
 uint8_t wait(uint16_t ms); //maximaal een minuut wait
 
 
