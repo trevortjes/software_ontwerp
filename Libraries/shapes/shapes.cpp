@@ -11,14 +11,14 @@
 //#include "pixelBuffer.h"
 PixelBuffer* ppBuf;
 
-uint8_t setShapesPixelBuffer(PixelBuffer* pb) {
+uint8_t setShapesPixelBuffer(PixelBuffer* pb)
+{
 	ppBuf = pb;
 	return 0;
 }
 
-uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
-		uint8_t col = 250) {
-
+uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col = 250)
+{
 	int dx = x2 - x1;
 	int dy = y2 - y1;
 	float rcx = 0;
@@ -39,7 +39,6 @@ uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
 			error = error + rcy;
 			y = y1 + round(error);
 		}
-
 	} else {
 		if (y1 > y2) {
 			drawLine(x2, y2, x1, y1, col);
@@ -49,14 +48,12 @@ uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
 			error = error + rcx;
 			x = x1 + round(error);
 		}
-
 	}
-
 	return 0;
 }
 
-uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2,
-		uint8_t col, uint16_t fill) {
+uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2, uint8_t col, uint16_t fill)
+{
 	if (x3 == x2 || y3 == y2) {
 		return 2;
 	}
@@ -90,9 +87,8 @@ uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2,
 	return 0;
 }
 
-uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3,
-		uint16_t y3, uint8_t col, uint16_t fill) {
-
+uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint8_t col, uint16_t fill)
+{
 	if (drawLine(x2, y2, x1, y1, col)) {
 		return 1;
 	}
@@ -106,63 +102,15 @@ uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3,
 	return 0;
 }
 
-/*uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill){
-	 //Region 1
-	   p=yrad*yrad-xrad*xrad*yrad+xrad*xrad/4;
-	   xp=0;
-	   yp=yrad;
-	   while(2.0*yrad*yrad*xp <= 2.0*xrad*xrad*yp)
-	   {
-		if(p < 0)
-		{
-			xp++;
-			p = p+2*yrad*yrad*xp+yrad*yrad;
-		}
-		else
-		{
-			xp++;
-			yp--;
-			p = p+2*yrad*yrad*xp-2*xrad*xrad*y-yrad*yrad;
-		}
-		//UB_VGA_SetPixel(xc+x,yc+y,RED);
-		//UB_VGA_SetPixel(xc+x,yc-y,RED);
-		//UB_VGA_SetPixel(xc-x,yc+y,RED);
-		//UB_VGA_SetPixel(xc-x,yc-y,RED);
-		ppBuf->add(col, xc+x,yc+y);
-		ppBuf->add(col, xc+x,yc-y);
-		ppBuf->add(col, xc-x,yc+y);
-		ppBuf->add(col, xc-x,yc-y);
-	   }
+uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill, uint8_t fillCol)
+{
+	uint16_t xp,yp;
+	float p;
 
-	  //Region 2
-	   p=yrad*yrad*(x+0.5)*(x+0.5)+xrad*xrad*(y-1)*(y-1)-xrad*xrad*yrad*yrad;
-	   while(yp > 0)
-	   {
-		if(p <= 0)
-		{
-			xp++;
-			yp--;
-			p = p+2*yrad*yrad*xp-2*xrad*xrad*yp+xrad*xrad;
-		}
-		else
-		{
-			yp--;
-			p = p-2*xrad*xrad*yp+xrad*xrad;
-		}
-		//putpixel(xc+x,yc+y,RED);
-		//putpixel(xc+x,yc-y,RED);
-		//putpixel(xc-x,yc+y,RED);
-		//putpixel(xc-x,yc-y,RED);
-		 ppBuf->add(col, xc+x,yc+y);
-		 ppBuf->add(col, xc+x,yc-y);
-		 ppBuf->add(col, xc-x,yc+y);
-		 ppBuf->add(col, xc-x,yc-y);
-	   }
-}*/
-
-uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col, uint16_t fill){
-uint16_t xp,yp;
-float p;
+	if (fill == true)
+	{
+	    drawEllipFill(x,y,xrad,yrad,fillCol);
+	}
 
    //Region 1
    p=yrad*yrad-xrad*xrad*yrad+xrad*xrad/4;
@@ -170,7 +118,7 @@ float p;
    yp=yrad;
    while(2.0*yrad*yrad*xp <= 2.0*xrad*xrad*yp)
    {
-	if(p < 0)
+   if(p < 0)
 	{
 		xp++;
 		p = p+2*yrad*yrad*xp+yrad*yrad;
@@ -181,20 +129,16 @@ float p;
 		yp--;
 		p = p+2*yrad*yrad*xp-2*xrad*xrad*yp-yrad*yrad;
 	}
-	//putpixel(x+xp,y+yp,RED);
-	//putpixel(x+xp,y-yp,RED);
-	//putpixel(x-xp,y+yp,RED);
-	//putpixel(x-xp,y-yp,RED);
-
 	ppBuf->add(col, x+xp,y+yp);
 	ppBuf->add(col, x+xp,y-yp);
 	ppBuf->add(col, x-xp,y+yp);
 	ppBuf->add(col, x-xp,y-yp);
-
+	ppBuf->add(col, x, y+yrad);
+	ppBuf->add(col, x, y-yrad);
    }
 
   //Region 2
-   p=yrad*yrad*(xp+0.5)*(xp+0.5)+xrad*xrad*(yp-1)*(yp-1)-xrad*xrad*yrad*yrad;
+   p=yrad*yrad*(xp+0.5)*(xp+0.5)+xrad*xrad*(yp-1)*(yp-1)-xrad*xrad*yrad*yrad;//HIER
    while(yp > 0)
    {
 	if(p <= 0)
@@ -208,27 +152,15 @@ float p;
 		yp--;
 		p = p-2*xrad*xrad*yp+xrad*xrad;
 	}
-	//putpixel(x+xp,y+yp,RED);
-	//putpixel(x+xp,y-yp,RED);
-	//putpixel(x-xp,y+yp,RED);
-	//putpixel(x-xp,y-yp,RED);
-
-	ppBuf->add(col, (x-1)+xp,y+yp);
-	ppBuf->add(col, (x-1)+xp,y-yp);
-	ppBuf->add(col, (x-1)-xp,y+yp);
-	ppBuf->add(col, (x-1)-xp,y-yp);
-
+	ppBuf->add(col, (x-0)+xp,y+yp);
+	ppBuf->add(col, (x-0)+xp,y-yp);
+	ppBuf->add(col, (x-0)-xp,y+yp);
+	ppBuf->add(col, (x-0)-xp,y-yp);
    }
-
-   if (fill == true && xrad != 1 && yrad != 1)
-   {
-	    return drawEllip(x,y,xrad-1,yrad-1,col, fill);
-   }
-
    return 0;
 }
 
-uint8_t drawEllipfill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col)//metalleen fill
+uint8_t drawEllipFill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t col)//met alleen fill
 {
 	for(int yp=-yrad; yp<=yrad; yp++)
 	{
@@ -238,7 +170,7 @@ uint8_t drawEllipfill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint
 		        double dy = (double)yp / (double)yrad;
 		        if(dx*dx+dy*dy <= 1)
 		        	ppBuf->add(col, xp+x,yp+y);
-		        	//setpixel(xp+x,yp+y,col);
 		    }
 	}
+	return 0;
 }

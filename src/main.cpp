@@ -58,7 +58,9 @@ int main(void) {
 	drawLine(80, 40, 40, 80, 120);
 	drawLine(319, 1, 319, 240, 120);
 	drawTri(200, 150, 180, 170, 220, 170, 200, 1);\
-	drawEllip(100, 100, 50, 50, 120, 0);
+	//drawEllipFill(100,100,59,40,200);
+	drawEllip(100, 100, 59, 40, 120, 1, 200);
+
 	char s[]="the quick brown fox jumps over the lazy dog\n123456789()!@#$%^&*-=+";
 	drawText(1,1,s,1);
 
