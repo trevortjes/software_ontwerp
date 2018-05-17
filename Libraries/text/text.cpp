@@ -8,6 +8,7 @@
 #include "Ariel.hpp"
 #include "collors.h"
 PixelBuffer* ppBuft;
+#define TEXTHEIGHT 12
 
 uint8_t setTextPixelBuffer(PixelBuffer* pb) {
 	ppBuft = pb;
@@ -41,6 +42,7 @@ uint8_t drawText(uint16_t x, uint16_t y, char* text, uint8_t s){
 			xd=x;
 			yd=yd+TEXTHEIGHT*s+1;
 		}
+		i++;
 	}
 	return 0;
 }
