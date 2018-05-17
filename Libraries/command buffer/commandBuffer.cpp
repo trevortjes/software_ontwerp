@@ -8,7 +8,7 @@
 #include "commandBuffer.h"
 #include "uart.h"
 
-char *stringBuf="hoi";
+char *stringBuf;
 char* commands[20];
 
 void CommandBuffer::initRs232()
@@ -49,7 +49,7 @@ void CommandBuffer::writeRs232(char* text)
 
 void CommandBuffer::Echo()
 {
-	UART_gets(stringBuf, 1);
+	UART_gets(stringBuf, 0);
 	UART_puts(readRs232());
 }
 
