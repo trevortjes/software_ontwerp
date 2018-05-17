@@ -59,7 +59,7 @@ int main(void) {
 	drawLine(319, 1, 319, 240, 120);
 	drawTri(200, 150, 180, 170, 220, 170, 200, 1);\
 	drawEllip(100, 100, 50, 50, 120, 0);
-	char s[]="Dit is een test text!!!";
+	char s[]="the quick brown fox jumps over the lazy dog\n123456789()!@#$%^&*-=+";
 	drawText(1,1,s,1);
 
 
