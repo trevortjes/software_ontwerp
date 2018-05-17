@@ -29,12 +29,16 @@ In the interrupt routine the char is send back to the terminal
 */
 
 /* Includes ------------------------------------------------------------------*/
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #include "includes.h"
 
 
 char string[100];
 int charcounter = 0;
-uint8_t init = 0;
+//uint8_t initit = 0;
 
 void UART_init(void)
 {
@@ -83,14 +87,13 @@ USART_Init(USART2, &USART_InitStructure);
 USART_ITConfig(USART2,USART_IT_RXNE,ENABLE);
 
 USART_Cmd(USART2, ENABLE);
-init = 1;
+initit = 1;
 }
 
 void UART_putchar(char c)
 {
 		while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET); // Wait for Empty
 		USART_SendData(USART2, c);
-
 }
 
 void UART_puts(char *s)
@@ -261,3 +264,7 @@ void UART_gets(char *s, int echo)
 		s++;
 	}
 }
+
+#ifdef __cplusplus
+}
+#endif

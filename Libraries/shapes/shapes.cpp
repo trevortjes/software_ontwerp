@@ -152,10 +152,10 @@ uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint8_t 
 		yp--;
 		p = p-2*xrad*xrad*yp+xrad*xrad;
 	}
-	ppBuf->add(col, (x-0)+xp,y+yp);
-	ppBuf->add(col, (x-0)+xp,y-yp);
-	ppBuf->add(col, (x-0)-xp,y+yp);
-	ppBuf->add(col, (x-0)-xp,y-yp);
+	ppBuf->add(col, (x)+xp,y+yp);
+	ppBuf->add(col, (x)+xp,y-yp);
+	ppBuf->add(col, (x)-xp,y+yp);
+	ppBuf->add(col, (x)-xp,y-yp);
    }
    return 0;
 }

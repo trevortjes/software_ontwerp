@@ -10,10 +10,6 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 
-
-
-
-
 class PixelBuffer {
 	private:
 		uint8_t color[256];
@@ -26,7 +22,5 @@ class PixelBuffer {
 		uint8_t push();
 
 };
-
-
 
 #endif //PIXELBUFFER_H
