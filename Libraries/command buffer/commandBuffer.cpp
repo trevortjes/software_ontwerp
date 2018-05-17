@@ -49,8 +49,8 @@ void CommandBuffer::writeRs232(char* text)
 
 void CommandBuffer::Echo()
 {
-	UART_gets(stringBuf, 0);
-	UART_puts(readRs232());
+
+	UART_puts(this->readRs232());
 }
 
 uint8_t CommandBuffer::executeBuffer()

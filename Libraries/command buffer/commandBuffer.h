@@ -10,21 +10,22 @@
 
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
-
+#include "command.h"
 class CommandBuffer {
 private:
-		char command[20];
+		Command *commands;
 		void clearBuffer();
 
 public:
+	CommandBuffer();
+	CommandBuffer(char *s);
+	~CommandBuffer();
 	char* readRs232();
 	void initRs232();
 	void writeRs232(char* text);
 	void Echo();
 	uint8_t executeBuffer();
-	CommandBuffer();
-	CommandBuffer(char *s);
-	~CommandBuffer();
+
 };
 
 #endif /* COMMAND_BUFFER_COMMANDBUFFER_H_ */
