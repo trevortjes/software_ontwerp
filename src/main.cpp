@@ -34,11 +34,10 @@
 #include "text.h"
 #include "shapes.h"
 #include "pixelBuffer.h"
-
-/* Private macro */
-/* Private variables */
-/* Private function prototypes */
-/* Private functions */
+#include "commandBuffer.h"
+#include "wait.h"
+#include "clearScreen.h"
+#include "bmp.h"
 
 /**
  **===========================================================================
@@ -49,27 +48,57 @@
  */
 int main(void) {
 	UB_VGA_Screen_Init();
+	CommandBuffer cmdBuf;
 	PixelBuffer pBuf;
+	//cmdBuf.initRs232();
+	//waitInit();
 	setShapesPixelBuffer(&pBuf);
 	setTextPixelBuffer(&pBuf);
 	UB_VGA_FillScreen(40);
-	drawRect(40, 80, 80, 40, 200, 1);
-	drawLine(80, 80, 40, 40, 120);
-	drawLine(80, 40, 40, 80, 120);
-	drawLine(319, 1, 319, 240, 120);
-	drawTri(200, 150, 180, 170, 220, 170, 200, 1);\
+	//wait(1000);
+
+	drawRect(20, 80, 60, 40, 200, 1);
+	drawLine(20, 80, 60, 40, 120);
+	drawLine(20, 40, 60, 80, 120);
+
+	drawLine(0, 0, 319, 0, 120);
+	drawLine(0, 0, 0, 239, 120);
+	drawLine(319, 0, 319, 239, 120);
+	drawLine(0, 239, 319, 239, 120);
+
+	drawTri(40, 160, 20, 180, 60, 180, 200, 1);
 	//drawEllipFill(100,100,59,40,200);
-	drawEllip(100, 100, 59, 40, 120, 1, 200);
+
+	int loop = 0;
+	for(loop; loop<5; loop++)
+	{
+		drawEllip(50*loop+40, 120, 20, 20, 120, 1, 200);
+
+	}
+
+	int bitm = 0;
+	for(bitm; bitm <5; bitm++)
+	{
+		writeBMPROM( bitm,  20+40*bitm,  200);
+		//writeBMPROM( 1,  60,  180);
+		//writeBMPROM( 2,  100,  180);
+		//writeBMPROM( 3,  140,  180);
+		//writeBMPROM( 4,  180,  180);
+	}
+
+
 
 	char s[]="the quick brown fox jumps over the lazy dog\n123456789()!@#$%^&*-=+";
-	drawText(1,1,s,1);
+	drawText(20,5,s,1);
 
 
 	pBuf.push();
-	int i = 0;
-
+	//clearScherm(155);
+	int i=0;
 	while (1) {
-		i++;
+		//cmdBuf.writeRs232("hoi\n\r");
+		//cmdBuf.Echo();
+		i++;//
 	}
 }
 
