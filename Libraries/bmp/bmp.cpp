@@ -8,11 +8,11 @@
 #include "bitmaps.h"
 
 
-//PixelBuffer* ppBuf;
+//PixelBuffer* ppBufBMP;
 
 //uint8_t setShapesPixelBuffer(PixelBuffer* pb)
 //{
-//	ppBuf = pb;
+//	ppBufBMP = pb;
 //	return 0;
 //}
 /*
@@ -27,7 +27,7 @@ uint8_t x, y;
 		{
 			if (bitmaps[nr][i] != 0)
 			{
-				ppBuf->add(bitmaps[nr][i],x,y);
+				ppBufBMP->add(bitmaps[nr][i],x,y);
 			}
 
 			i--;
