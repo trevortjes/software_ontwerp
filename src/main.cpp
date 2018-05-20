@@ -54,6 +54,7 @@ int main(void) {
 	//waitInit();
 	setShapesPixelBuffer(&pBuf);
 	setTextPixelBuffer(&pBuf);
+	setBMPPixelBuffer(&pBuf);
 	UB_VGA_FillScreen(40);
 	//wait(1000);
 

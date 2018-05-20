@@ -12,7 +12,7 @@
 #include "stm32f4_discovery.h"
 #include "pixelBuffer.h"
 
-uint8_t setShapesPixelBuffer(PixelBuffer* p);
+uint8_t setBMPPixelBuffer(PixelBuffer* p);
 uint8_t writeBMPROM(uint8_t nr, uint16_t x3, uint16_t y3);
 uint8_t writeBMPRs232(uint8_t *p, uint16_t width, uint16_t height, uint8_t nr, uint16_t x3, uint16_t y3);
 uint8_t writeBMPRs232Anim(uint8_t *p, uint16_t pwidth, uint16_t width, uint16_t height, uint8_t nr, uint16_t x3, uint16_t y3);

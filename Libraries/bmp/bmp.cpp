@@ -10,7 +10,7 @@
 
 //PixelBuffer* ppBufBMP;
 
-//uint8_t setShapesPixelBuffer(PixelBuffer* pb)
+//uint8_t setBMPPixelBuffer(PixelBuffer* pb)
 //{
 //	ppBufBMP = pb;
 //	return 0;
