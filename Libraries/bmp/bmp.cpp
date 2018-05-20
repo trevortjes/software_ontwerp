@@ -8,33 +8,33 @@
 #include "bitmaps.h"
 
 
-//PixelBuffer* ppBufBMP;
+PixelBuffer* ppBufBMP;
 
-//uint8_t setBMPPixelBuffer(PixelBuffer* pb)
-//{
-//	ppBufBMP = pb;
-//	return 0;
-//}
-/*
+uint8_t setBMPPixelBuffer(PixelBuffer* pb)
+{
+	ppBufBMP = pb;
+	return 0;
+}
+
 uint8_t writeBMPROM(uint8_t nr, uint16_t x3, uint16_t y3)
 {
-uint16_t i = 1296;
+uint16_t i = 0;
 uint8_t x, y;
 
-	for(x=x3; x<32 + x3; x++)//x regel met offset x3
+	for(y=y3; y<32 + y3; y++)//y regel met offset y3
 	{
-		for(y=y3; y<32 + y3; y++) //y regel met offset y3
+		for(x=x3; x<32 + x3; x++) //x regel met offset x3
 		{
-			if (bitmaps[nr][i] != 0)
+			if (bitmaps[nr][i] != 0xFF)
 			{
 				ppBufBMP->add(bitmaps[nr][i],x,y);
 			}
 
-			i--;
+			i++;
 		}
 	}
 
 return 0 ;
 }
 
-*/
+

@@ -81,10 +81,6 @@ int main(void) {
 	for(bitm; bitm <5; bitm++)
 	{
 		writeBMPROM( bitm,  20+40*bitm,  200);
-		//writeBMPROM( 1,  60,  180);
-		//writeBMPROM( 2,  100,  180);
-		//writeBMPROM( 3,  140,  180);
-		//writeBMPROM( 4,  180,  180);
 	}
 
 

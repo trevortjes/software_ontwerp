@@ -179,7 +179,7 @@ uint8_t drawEllipFill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad, uint
 	return 0;
 }
 
-
+/*
 uint8_t writeBMPROM(uint8_t nr, uint16_t x3, uint16_t y3)
 {
 uint16_t i = 0;
@@ -200,4 +200,5 @@ uint8_t x, y;
 
 return 0 ;
 }
+*/
 
