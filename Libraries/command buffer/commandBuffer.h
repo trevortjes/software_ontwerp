@@ -10,20 +10,20 @@
 
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
+#include "LinkedList.h"
 #include "command.h"
 class CommandBuffer {
 private:
-		Command *commands;
+		struct commandLink first;
 		void clearBuffer();
 
 public:
 	CommandBuffer();
 	CommandBuffer(char *s);
 	~CommandBuffer();
-	char* readRs232();
-	void initRs232();
-	void writeRs232(char* text);
-	void Echo();
+	uint8_t addCommand(char *s);
+	uint8_t checkForCommands();
+	uint8_t sendError(uint8_t e);
 	uint8_t executeBuffer();
 
 };

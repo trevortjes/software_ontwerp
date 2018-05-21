@@ -20,7 +20,7 @@ public:
 	Command(char* s);
 	~Command();
 	char *getCommand(){return commandString;}
-	uint8_t execute();
+	char * execute(){return commandString;}
 };
 
 #endif /* COMMAND_BUFFER_COMMAND_H_ */

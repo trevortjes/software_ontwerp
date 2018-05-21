@@ -76,7 +76,7 @@
 								<option id="com.atollic.truestudio.ld.general.scriptfile.975914900" name="Linker script" superClass="com.atollic.truestudio.ld.general.scriptfile" value="../stm32f4_flash.ld" valueType="string"/>
 								<option id="com.atollic.truestudio.ld.optimization.do_garbage.1668803392" name="Dead code removal " superClass="com.atollic.truestudio.ld.optimization.do_garbage" value="true" valueType="boolean"/>
 							</tool>
-							<tool id="com.atollic.truestudio.exe.debug.toolchain.gpp.372878210" name="C++ Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gpp">
+							<tool command="arm-atollic-eabi-g++ -c -std=c++0x" id="com.atollic.truestudio.exe.debug.toolchain.gpp.372878210" name="C++ Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gpp">
 								<option id="com.atollic.truestudio.gpp.symbols.defined.297177522" name="Defined symbols" superClass="com.atollic.truestudio.gpp.symbols.defined" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F4XX"/>
 									<listOptionValue builtIn="false" value="STM32F40XX"/>
@@ -93,6 +93,10 @@
 									<listOptionValue builtIn="false" value="&quot;../Libraries/pixel buffer&quot;"/>
 									<listOptionValue builtIn="false" value="../Libraries/shapes"/>
 									<listOptionValue builtIn="false" value="../Libraries/text"/>
+									<listOptionValue builtIn="false" value="&quot;../Libraries/command buffer&quot;"/>
+									<listOptionValue builtIn="false" value="../Libraries/wait"/>
+									<listOptionValue builtIn="false" value="../Libraries/bmp"/>
+									<listOptionValue builtIn="false" value="&quot;../Libraries/clear screen&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.1486864439" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1546936306" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>
@@ -231,6 +235,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/shapes}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/text}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/software_ontwerp/Libraries/VGA_driver}&quot;"/>
+									<listOptionValue builtIn="false" value="../Libraries/wait"/>
+									<listOptionValue builtIn="false" value="../Libraries/bmp"/>
+									<listOptionValue builtIn="false" value="&quot;../Libraries/clear screen&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.28780353" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1468217929" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F407VG" valueType="enumerated"/>

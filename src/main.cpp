@@ -49,9 +49,8 @@
 int main(void) {
 	UB_VGA_Screen_Init();
 	CommandBuffer cmdBuf;
+
 	PixelBuffer pBuf;
-	//cmdBuf.initRs232();
-	//waitInit();
 	setShapesPixelBuffer(&pBuf);
 	setTextPixelBuffer(&pBuf);
 	setBMPPixelBuffer(&pBuf);
@@ -91,11 +90,10 @@ int main(void) {
 
 	pBuf.push();
 	//clearScherm(155);
-	int i=0;
+
 	while (1) {
-		//cmdBuf.writeRs232("hoi\n\r");
-		//cmdBuf.Echo();
-		i++;//
+		cmdBuf.checkForCommands();
+
 	}
 }
 
