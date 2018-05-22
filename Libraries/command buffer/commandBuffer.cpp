@@ -72,8 +72,8 @@ uint8_t CommandBuffer::executeBuffer()
 {
 	struct commandLink *loop= &this->first;
 	while(loop!=nullptr){
-		//writeRs232("test");
-		writeRs232(loop->thisCommand->execute());
+
+		loop->thisCommand->execute();
 		loop=loop->nextCommand;
 	}
 	return 0;
@@ -102,9 +102,6 @@ uint8_t CommandBuffer::addCommand(char *s){
 uint8_t CommandBuffer::checkForCommands(){
 	char array[120];
 	UART_gets(array,0);
-	if(*array == -1){
-		return 1;
-	}
 	int i=0;
 	for(i=0;array[i]!='\0';i++);
 	char *s= (char*)malloc(sizeof(char)*i);

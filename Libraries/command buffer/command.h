@@ -15,12 +15,15 @@ class Command {
 private:
 	Command();
 	char* commandString;
+	uint8_t clear();
+	uint8_t lijn ();
+	uint8_t ellipse();
 
 public:
 	Command(char* s);
 	~Command();
 	char *getCommand(){return commandString;}
-	char * execute(){return commandString;}
+	uint8_t execute();
 };
 
 #endif /* COMMAND_BUFFER_COMMAND_H_ */

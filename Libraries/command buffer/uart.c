@@ -250,13 +250,13 @@ void UART_gets(char *s, int echo)
 	 	if (*s==-1)             // check for data available
 	 		continue;
 
-	 	if (*s==0xff || *s==LF) // if no data or LF, continue
+	 	if (*s==0xff) // if no data or LF, continue
 			continue;
 
 		if (echo)              // if output-flag set
 			UART_putchar(*s);  // to read what u entered
 
-		if (*s==CR)            // if enter pressed
+		if (*s==CR || *s==LF || *s=='\0')            // if enter pressed
 		{
 			*s = '\0';         // ignore char and close string
 		    return;            // buf ready, exit loop

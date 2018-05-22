@@ -47,52 +47,23 @@
  **===========================================================================
  */
 int main(void) {
+	//init
 	UB_VGA_Screen_Init();
 	CommandBuffer cmdBuf;
-
 	PixelBuffer pBuf;
 	setShapesPixelBuffer(&pBuf);
 	setTextPixelBuffer(&pBuf);
 	setBMPPixelBuffer(&pBuf);
-	UB_VGA_FillScreen(40);
-	//wait(1000);
 
-	drawRect(20, 80, 60, 40, 200, 1);
-	drawLine(20, 80, 60, 40, 120);
-	drawLine(20, 40, 60, 80, 120);
-
-	drawLine(0, 0, 319, 0, 120);
-	drawLine(0, 0, 0, 239, 120);
-	drawLine(319, 0, 319, 239, 120);
-	drawLine(0, 239, 319, 239, 120);
-
-	drawTri(40, 160, 20, 180, 60, 180, 200, 1);
-	//drawEllipFill(100,100,59,40,200);
-
-	int loop = 0;
-	for(loop; loop<5; loop++)
-	{
-		drawEllip(50*loop+40, 120, 20, 20, 120, 1, 200);
-
-	}
-
-	int bitm = 0;
-	for(bitm; bitm <5; bitm++)
-	{
-		writeBMPROM( bitm,  20+40*bitm,  200);
-	}
-
-
-
-	char s[]="the quick brown fox jumps over the lazy dog\n123456789()!@#$%^&*-=+";
-	drawText(20,5,s,1);
-
-
-	pBuf.push();
-	//clearScherm(155);
+	//test code
+	cmdBuf.addCommand("clearscherm,rood");
+	//cmdBuf.addCommand("lijn,1,1,100,100,4,rood");
+	//cmdBuf.addCommand("lijn,100,1,100,1,4,groen");
+	//cmdBuf.addCommand("ellips,200,200,30,40,blauw");
+	//cmdBuf.addCommand("ellips,300,300,40,30,lichtrood");
+	cmdBuf.executeBuffer();
 
 	while (1) {
-		cmdBuf.checkForCommands();
 
 	}
 }
