@@ -13,5 +13,12 @@
 void waitInit();
 uint8_t wait(uint16_t ms); //maximaal een minuut wait
 
+void DELAY_init(void);
+
+
+
+
+
+
 
 #endif /* WAIT_H_ */

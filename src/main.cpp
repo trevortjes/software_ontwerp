@@ -54,7 +54,20 @@ int main(void) {
 	setShapesPixelBuffer(&pBuf);
 	setTextPixelBuffer(&pBuf);
 	setBMPPixelBuffer(&pBuf);
+	waitInit();
+	clearScherm(40);
+	wait(1000);
+	for (int i = 0; i<6; i++)
+	{
+		writeBMPROM(i, 10+40*i, 100);
+		pBuf.push();
+		wait(1000);
+	}
 
+	drawLine(10,10,50,50,200,1);
+	drawLine(20,10,60,50,200,2);
+	drawLine(30,10,70,50,200,3);
+	drawLine(40,10,80,50,200,10);
 	//test code
 	//cmdBuf.addCommand("clearscherm,wit");
 	//cmdBuf.addCommand("lijn,1,1,100,100,4,rood");
