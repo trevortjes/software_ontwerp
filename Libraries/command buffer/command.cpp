@@ -42,6 +42,8 @@ uint8_t color(char *s) {
 		return BLUE;
 	} else if (strcmp(s, lred) == 0) {
 		return RED;
+	}else if (strcmp(s, "wit") == 0) {
+		return WHITE;
 	}
 
 	return BLACK;
@@ -394,7 +396,7 @@ uint8_t Command::bitmap() {
 	uint16_t x1 = sti(c);
 	k += i;
 	i = 0;
-	while (*(this->commandString + i + k) != ',') {
+	while (*(this->commandString + i + k) != '\0') {
 		c[i] = *(this->commandString + i + k);
 		i++;
 	}
