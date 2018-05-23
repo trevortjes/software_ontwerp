@@ -31,7 +31,7 @@ uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col
 	int dx = x2 - x1;
 	int dy = y2 - y1;
 	if (t>1){
-		if(abs(dx) > abs(dy)){
+		if(abs(dx) < abs(dy)){
 			for(int i=1;i<t;i++){
 				drawLine (x1+i,y1,x2+i,y2,col,1);
 			}
