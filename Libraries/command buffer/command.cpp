@@ -441,5 +441,5 @@ uint8_t Command::tekst() {
 	}
 	c[i] = '\0';
 	i++;
-	return text(x1,y1,c,12, this->commandString+k+i);
+	return drawText(x1,y1,c,12/*, this->commandString+k+i*/);
 }
