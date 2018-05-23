@@ -56,13 +56,13 @@ int main(void) {
 	setBMPPixelBuffer(&pBuf);
 
 	//test code
-	cmdBuf.addCommand("clearscherm,rood");
-	//cmdBuf.addCommand("lijn,1,1,100,100,4,rood");
-	//cmdBuf.addCommand("lijn,100,1,100,1,4,groen");
-	//cmdBuf.addCommand("ellips,200,200,30,40,blauw");
-	//cmdBuf.addCommand("ellips,300,300,40,30,lichtrood");
+	cmdBuf.addCommand("clearscherm,zwart");
+	cmdBuf.addCommand("lijn,1,1,100,100,4,rood");
+	cmdBuf.addCommand("lijn,100,1,100,1,4,groen");
+	cmdBuf.addCommand("ellips,200,200,30,40,blauw");
+	cmdBuf.addCommand("ellips,300,300,40,30,lichtrood");
 	cmdBuf.executeBuffer();
-
+	pBuf.push();
 	while (1) {
 
 	}

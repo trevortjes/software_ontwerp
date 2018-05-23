@@ -11,6 +11,15 @@
 #include "clearScreen.h"
 #include <string.h>
 
+uint16_t sti(char *s){
+	uint16_t result=0;
+	int i=0;
+	while(*(s+i)!=','&&*(s+i)!='\0'){
+		result = result * 10 + ( *(s+i) - '0' );
+		i++;
+	}
+	return result;
+}
 
 uint8_t color(char *s)
 {
@@ -83,10 +92,180 @@ uint8_t Command::clear(){
 
 }
 uint8_t Command::lijn (){
-
+char check[]="lijn,";
+	int i;
+	for(int i=0;i<5;i++){
+		if(*(this->commandString+i)!=check[i]){
+			return 255;
+		}
+	}
+	char c[20];
+		i=0;
+		int k=5;
+		while(*(this->commandString+i+k)!=','){
+			c[i]=*(this->commandString+i+k);
+			i++;
+		}
+		c[i]='\0';
+		i++;
+		uint16_t x1=sti(c);
+		k+=i;
+		i=0;
+		while(*(this->commandString+i+k)!=','){
+			c[i]=*(this->commandString+i+k);
+			i++;
+		}
+		c[i]='\0';
+		i++;
+		uint16_t y1=sti(c);
+		k+=i;
+		i=0;
+		while(*(this->commandString+i+k)!=','){
+			c[i]=*(this->commandString+i+k);
+			i++;
+		}
+		c[i]='\0';
+		i++;
+		uint16_t x2=sti(c);
+		k+=i;
+		i=0;
+		while(*(this->commandString+i+k)!=','){
+			c[i]=*(this->commandString+i+k);
+			i++;
+		}
+		c[i]='\0';
+		uint16_t y2=sti(c);
+		i++;
+		k+=i;
+				i=0;
+				while(*(this->commandString+i+k)!=','){
+					c[i]=*(this->commandString+i+k);
+					i++;
+				}
+				c[i]='\0';
+		uint16_t d=sti(c);
+		i++;
+		k+=i;
+		i=0;
+		while(*(this->commandString+i+k)!='\0'){
+			c[i]=*(this->commandString+i+k);
+			i++;
+		}
+		c[i]='\0';
+		uint8_t col=color(c);
+	return drawLine(x1, y1, x2, y2, col );
 }
 uint8_t Command::ellipse(){
+	char check[]="ellips,";
+		int i;
+		for(int i=0;i<7;i++){
+			if(*(this->commandString+i)!=check[i]){
+				return 255;
+			}
+		}
+		char c[20];
+			i=0;
+			int k=7;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			i++;
+			uint16_t x1=sti(c);
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			i++;
+			uint16_t y1=sti(c);
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			i++;
+			uint16_t x2=sti(c);
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			uint16_t y2=sti(c);
 
+			i++;
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!='\0'){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			uint8_t col=color(c);
+		return drawEllip(x1, y1, x2, y2, col,0 ,0 );
 }
 
+uint8_t Command::rechthoek(){
+	char check[]="rechthoek,";
+		int i;
+		for(int i=0;i<10;i++){
+			if(*(this->commandString+i)!=check[i]){
+				return 255;
+			}
+		}
+		char c[20];
+			i=0;
+			int k=10;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			i++;
+			uint16_t x1=sti(c);
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			i++;
+			uint16_t y1=sti(c);
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			i++;
+			uint16_t x2=sti(c);
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!=','){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			uint16_t y2=sti(c);
+
+			i++;
+			k+=i;
+			i=0;
+			while(*(this->commandString+i+k)!='\0'){
+				c[i]=*(this->commandString+i+k);
+				i++;
+			}
+			c[i]='\0';
+			uint8_t col=color(c);
+		return drawRect(x1, y1, x2, y2, col,0);
+}
 

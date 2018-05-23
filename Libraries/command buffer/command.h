@@ -18,6 +18,7 @@ private:
 	uint8_t clear();
 	uint8_t lijn ();
 	uint8_t ellipse();
+	uint8_t rechthoek()
 
 public:
 	Command(char* s);
