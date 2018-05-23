@@ -108,10 +108,12 @@ uint8_t CommandBuffer::checkForCommands(){
 	int i=0;
 	for(i=0;array[i]!='\0';i++);
 	char *s= (char*)malloc(sizeof(char)*i);
-	for(int x=0;x<i;x++){
+	int x;
+	for(x=0;x<i;x++){
 		s[x]=array[x];
 	}
-	if(strcmp(s, "execute")==0||strcmp(s, "repeat")==0){
+	s[x]='\0';
+	if(strcmp(s, "execute")==0||strcmp(s, "repeat")==0||strcmp(s, "herhaal")==0){
 		this->executeBuffer();
 		return 0;
 	}
