@@ -8,6 +8,8 @@
 #include "commandBuffer.h"
 #include "uart.h"
 #include <malloc.h>
+#include <string.h>
+#include "shapes.h"
 #define nullptr 0
 
 
@@ -76,6 +78,7 @@ uint8_t CommandBuffer::executeBuffer()
 		loop->thisCommand->execute();
 		loop=loop->nextCommand;
 	}
+	pushBuffer();
 	return 0;
 }
 
@@ -108,11 +111,17 @@ uint8_t CommandBuffer::checkForCommands(){
 	for(int x=0;x<i;x++){
 		s[x]=array[x];
 	}
+	if(strcmp(s, "execute")==0||strcmp(s, "repeat")==0){
+		this->executeBuffer();
+		return 0;
+	}
 	this->addCommand(s);
-	this->executeBuffer();
+
 	return 0;
 
 }
+
+
 /*
 
 
