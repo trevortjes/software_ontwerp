@@ -21,12 +21,26 @@ uint8_t setShapesPixelBuffer(PixelBuffer* pb)
 uint8_t pushBuffer()
 {
 	ppBuf->push();
+	return 0;
 }
 
-uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col = 250)
+uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col , uint8_t t )
 {
+
+
 	int dx = x2 - x1;
 	int dy = y2 - y1;
+	if (t>1){
+		if(abs(dx) > abs(dy)){
+			for(int i=1;i<t;i++){
+				drawLine (x1+i,y1,x2+i,y2,col,1);
+			}
+		}else{
+			for(int i=1;i<t;i++){
+				drawLine (x1,y1+1,x2,y2+1,col,1);
+			}
+		}
+	}
 	float rcx = 0;
 	float rcy = 0;
 	if (dx != 0)
@@ -38,7 +52,7 @@ uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col
 	float error = 0;
 	if (abs(dx) > abs(dy)) {
 		if (x1 > x2) {
-			drawLine(x2, y2, x1, y1, col);
+			drawLine(x2, y2, x1, y1, col, 1);
 		}
 		for (x = x1; x <= x2; x++) {
 			ppBuf->add(col, x, y);

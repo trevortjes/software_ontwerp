@@ -42,7 +42,7 @@ uint8_t color(char *s) {
 		return BLUE;
 	} else if (strcmp(s, lred) == 0) {
 		return RED;
-	}else if (strcmp(s, "wit") == 0) {
+	} else if (strcmp(s, "wit") == 0) {
 		return WHITE;
 	}
 
@@ -166,7 +166,7 @@ uint8_t Command::lijn() {
 	}
 	c[i] = '\0';
 	uint8_t col = color(c);
-	return drawLine(x1, y1, x2, y2, col);
+	return drawLine(x1, y1, x2, y2, col, d);
 }
 uint8_t Command::ellipse() {
 	char check[] = "ellips,";
@@ -407,5 +407,39 @@ uint8_t Command::bitmap() {
 }
 uint8_t Command::tekst() {
 
-	return 0;
+	char check[] = "tekst,";
+	int i;
+	for (int i = 0; i < 6; i++) {
+		if (*(this->commandString + i) != check[i]) {
+			return 255;
+		}
+	}
+	char c[20];
+	i = 0;
+	int k = 6;
+	while (*(this->commandString + i + k) != ',') {
+		c[i] = *(this->commandString + i + k);
+		i++;
+	}
+	c[i] = '\0';
+	i++;
+	uint16_t x1 = sti(c);
+	k += i;
+	i = 0;
+	while (*(this->commandString + i + k) != ',') {
+		c[i] = *(this->commandString + i + k);
+		i++;
+	}
+	c[i] = '\0';
+	i++;
+	uint16_t y1 = sti(c);
+	k += i;
+	i = 0;
+	while (*(this->commandString + i + k) != ',') {
+		c[i] = *(this->commandString + i + k);
+		i++;
+	}
+	c[i] = '\0';
+	i++;
+	return tekst(x1,y1,c,12/*, this->commandString+k+i*/);
 }
