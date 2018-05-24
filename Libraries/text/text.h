@@ -12,10 +12,10 @@
 #include "stm32f4_discovery.h"
 #include "pixelBuffer.h"
 
-#define TEXTHEIGHT 12
+#define TEXTHEIGHT 16
 
 uint8_t setTextPixelBuffer(PixelBuffer* p);
-uint8_t drawText(uint16_t x, uint16_t y, char* text, uint8_t s);
+uint8_t drawText(uint16_t x, uint16_t y, char* text, uint8_t col,uint8_t d);
 
 
 

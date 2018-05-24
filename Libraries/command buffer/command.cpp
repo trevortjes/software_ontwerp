@@ -461,6 +461,25 @@ uint8_t Command::tekst() {
 		i++;
 	}
 	c[i] = '\0';
+	char s[20];
+		k += i;
+		i = 0;
+		while (*(this->commandString + i + k) != ',') {
+			s[i] = *(this->commandString + i + k);
+			i++;
+		}
 	i++;
-	return drawText(x1,y1,c,16/*, this->commandString+k+i*/);
+	uint16_t col = sti(s);
+	k += i;
+
+	uint16_t b=0;
+	if(strcmp((this->commandString + i + k),"norm")==0){
+		b=0;
+	}else if(strcmp((this->commandString + i + k),"vet")==0){
+		b=1;
+	}else if(strcmp((this->commandString + i + k),"cursief")==0){
+		b=2;
+	}
+
+	return drawText(x1,y1,c,col,b);
 }
