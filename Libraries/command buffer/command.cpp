@@ -26,26 +26,45 @@ uint16_t sti(char *s) {
 
 uint8_t color(char *s) {
 
-	char black[] = "zwart";
-	char red[] = "rood";
-	char green[] = "groen";
-	char blue[] = "blauw";
-	char lred[] = "lichtrood";
 
-	if (strcmp(s, black) == 0) {
+
+	if (strcmp(s, "zwart") == 0) {
 		return BLACK;
-	} else if (strcmp(s, red) == 0) {
+	} else if (strcmp(s, "rood") == 0) {
 		return RED;
-	} else if (strcmp(s, green) == 0) {
+	} else if (strcmp(s, "bruin") == 0) {
+		return BROWN;
+	} else if (strcmp(s, "groen") == 0) {
 		return GREEN;
-	} else if (strcmp(s, blue) == 0) {
+	} else if (strcmp(s, "blauw") == 0) {
 		return BLUE;
-	} else if (strcmp(s, lred) == 0) {
+	} else if (strcmp(s, "lichtrood") == 0) {
 		return RED;
 	} else if (strcmp(s, "wit") == 0) {
 		return WHITE;
+	} else if (strcmp(s, "grijs") == 0) {
+		return GRAY;
+	} else if (strcmp(s, "cyaan") == 0) {
+			return CYAN;
+	} else if (strcmp(s, "magenta") == 0) {
+			return MAGENTA;
+	} else if (strcmp(s, "geel") == 0) {
+			return YELLOW;
+	} else if (strcmp(s, "paars") == 0) {
+			return PURPLE;
+	} else if (strcmp(s, "roze") == 0) {
+			return PINK;
+	} else if (strcmp(s, "lichtblauw") == 0) {
+			return LIGHT_BLUE;
+	} else if (strcmp(s, "lichtgroen") == 0) {
+			return LIGHT_GREEN;
+	} else if (strcmp(s, "lichtrood") == 0) {
+			return LIGHT_RED;
+	} else if (strcmp(s, "lichtcyaan") == 0) {
+			return LIGHT_CYAN;
+	} else if (strcmp(s, "lichtmagenta") == 0) {
+			return LIGHT_MAGENTA;
 	}
-
 	return BLACK;
 }
 Command::Command() {
@@ -365,6 +384,7 @@ uint8_t Command::wacht() {
 			return 255;
 		}
 	}
+	pushBuffer();
 	return wait(sti(this->commandString + 6));
 }
 
@@ -415,7 +435,7 @@ uint8_t Command::tekst() {
 			return 255;
 		}
 	}
-	char c[20];
+	char c[250];
 	i = 0;
 	int k = 6;
 	while (*(this->commandString + i + k) != ',') {
@@ -442,5 +462,5 @@ uint8_t Command::tekst() {
 	}
 	c[i] = '\0';
 	i++;
-	return drawText(x1,y1,c,12/*, this->commandString+k+i*/);
+	return drawText(x1,y1,c,16/*, this->commandString+k+i*/);
 }

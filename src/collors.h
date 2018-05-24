@@ -16,15 +16,27 @@
 // Green (3bit) -> Bit4-Bit2
 // Blue  (2bit) -> Bit1-Bit0
 //--------------------------------------------------------------
-#define  BLACK          0x00
-#define  BLUE           0x03
-#define  GREEN          0x1C
-#define  RED            0xE0
-#define  WHITE          0xFF
 
-#define  CYAN           0x1F
-#define  MAGENTA        0xE3
-#define  YELLOW         0xFC
+
+#define   BLACK         0x00
+#define   BROWN			0xAD
+#define   WHITE         0xFF
+#define   GRAY			0xBF
+#define   BLUE          0x03
+#define   LIGHT_BLUE	0x6F
+#define   LIGHT_GREEN	0x9E
+#define   LIGHT_RED		0xE9
+#define   LIGHT_CYAN	0xBF
+#define   LIGHT_MAGENTA	0xF7
+#define   GREEN         0x1C
+#define   RED           0xE0
+#define   CYAN          0x1F
+#define   MAGENTA       0xE3
+#define   YELLOW        0xFC
+#define   PURPLE		0x82
+#define   PINK			0xEF
+
+
 
 
 #endif /* COLLORS_H_ */

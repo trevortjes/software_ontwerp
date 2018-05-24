@@ -16,6 +16,7 @@ class CommandBuffer {
 private:
 		struct commandLink first;
 		void clearBuffer();
+		bool exec;
 
 public:
 	CommandBuffer();

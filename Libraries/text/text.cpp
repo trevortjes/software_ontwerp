@@ -40,14 +40,19 @@ uint8_t drawChar(uint16_t x, uint16_t y, char c, uint16_t *xd, uint8_t d=0){
 
 	for(uint8_t row=0;row<16; row++){
 		uint8_t font;
-		if(row>8){
+		if(width>8){
 			font=*(fontp+row*2);
 		}else{
 			font=*(fontp+row);
 		}
 
 
-		for(uint8_t pix=0;pix<width;pix++){
+		for(uint8_t pix=0;pix<=width;pix++){
+			if(pix>8){
+				if(*(fontp+row*2-1) & (1<<(8-(pix-8)))){
+					ppBuft->add(BLACK, x+pix, y+row);
+				}
+			}
 			if(font& (1<<(8-pix))){
 				ppBuft->add(BLACK, x+pix, y+row);
 			}

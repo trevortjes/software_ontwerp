@@ -55,7 +55,10 @@ int main(void) {
 	setShapesPixelBuffer(&pBuf);
 	setTextPixelBuffer(&pBuf);
 	setBMPPixelBuffer(&pBuf);
+	clearScherm(0xFF);
+	drawText(1,1,"Wachten op input!",16);
 
+	pBuf.push();
 	while (1) {
 			cmdBuf.checkForCommands();
 	}

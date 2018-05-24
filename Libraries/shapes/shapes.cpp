@@ -26,8 +26,6 @@ uint8_t pushBuffer()
 
 uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t col , uint8_t t )
 {
-
-
 	int dx = x2 - x1;
 	int dy = y2 - y1;
 	if (t>1){
