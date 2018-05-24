@@ -1718,7 +1718,7 @@ static const uint8_t  arial_12ptBitmaps[] =
 
 // Character descriptors for Arial 12pt
 // { [Char width in bits], [Offset into arial_12ptCharBitmaps in bytes] }
-static const int arial_12ptDescriptors[] =
+static const int arial_12ptDescriptors[][2] =
 {
 	{4,1968},
 	{1, 0}, 		// !
@@ -1780,7 +1780,7 @@ static const int arial_12ptDescriptors[] =
 	{9, 1280}, 		// Y
 	{9, 1312}, 		// Z
 	{3, 1344}, 		// [
-	{4, 1360}, 		// \
+	{4, 1360}, 		//
 	{3, 1376}, 		// ]
 	{7, 1392}, 		// ^
 	{9, 1408}, 		// _
