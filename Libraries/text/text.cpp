@@ -18,7 +18,7 @@ uint8_t setTextPixelBuffer(PixelBuffer* pb) {
 uint8_t drawChar(uint16_t x, uint16_t y, char c, uint16_t *xd){
 	int width = FONT_SIZE[c-32][0];
 	int start = FONT_SIZE[c-32][1];
-	for(uint8_t row=0;row<12; row++){
+	for(uint8_t row=0;row<16; row++){
 		uint8_t font=FONT[start+row];
 		for(uint8_t pix=0;pix<width;pix++){
 			if(font& (1<<(8-pix))){
