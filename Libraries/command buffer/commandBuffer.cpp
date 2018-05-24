@@ -114,7 +114,6 @@ uint8_t CommandBuffer::checkForCommands(){
 	}
 	s[x]='\0';
 	if(strcmp(s, "execute")==0||strcmp(s, "repeat")==0||strcmp(s, "herhaal")==0){
-		pushBuffer();
 		this->executeBuffer();
 		return 0;
 	}

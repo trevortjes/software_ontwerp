@@ -101,6 +101,7 @@ uint8_t Command::clear() {
 	}
 	c[i] = '\0';
 	uint8_t col = color(c);
+	pushBuffer();
 	return clearScherm(col);
 
 }
