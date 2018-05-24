@@ -49,36 +49,12 @@
 int main(void) {
 	//init
 	UB_VGA_Screen_Init();
+	waitInit();
 	CommandBuffer cmdBuf;
 	PixelBuffer pBuf;
 	setShapesPixelBuffer(&pBuf);
 	setTextPixelBuffer(&pBuf);
 	setBMPPixelBuffer(&pBuf);
-	waitInit();
-	clearScherm(40);
-	wait(1000);
-	for (int i = 0; i<6; i++)
-	{
-		writeBMPROM(i, 10+40*i, 100);
-		pBuf.push();
-		wait(1000);
-	}
-
-	drawLine(10,10,50,50,200,1);
-	drawLine(20,10,60,50,200,2);
-	drawLine(30,10,70,50,200,3);
-	drawLine(40,10,80,50,200,10);
-	//test code
-	//cmdBuf.addCommand("clearscherm,wit");
-	//cmdBuf.addCommand("lijn,1,1,100,100,4,rood");
-	//cmdBuf.addCommand("rechthoek,100,100,130,120,rood");
-	//cmdBuf.addCommand("ellips,200,200,30,40,blauw");
-	//cmdBuf.addCommand("bitmap,1,150,50");
-	//cmdBuf.addCommand("driehoek,100,100,30,20,250,250,rood");
-	//cmdBuf.addCommand("lijn,100,100,30,20,4,green");
-	//cmdBuf.addCommand("lijn,100,100,250,250,4,green");
-	//cmdBuf.addCommand("lijn,250,250,30,20,4,green");
-	//cmdBuf.executeBuffer();
 
 	while (1) {
 			cmdBuf.checkForCommands();
