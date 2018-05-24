@@ -75,7 +75,10 @@ uint8_t CommandBuffer::executeBuffer()
 	struct commandLink *loop= &this->first;
 	while(loop!=nullptr){
 
-		loop->thisCommand->execute();
+		if(loop->thisCommand->execute()==255){
+			UART_puts("Command invalid: ");
+			UART_puts(loop->thisCommand->getCommand());
+		}
 		loop=loop->nextCommand;
 	}
 	pushBuffer();

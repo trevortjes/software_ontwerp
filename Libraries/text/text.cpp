@@ -6,20 +6,47 @@
  */
 #include "text.h"
 #include "Ariel.hpp"
+//#include "ArielI.hpp"
+//#include "ArielB.hpp"
 #include "collors.h"
+
 PixelBuffer* ppBuft;
 #define TEXTHEIGHT 12
+
+
 
 uint8_t setTextPixelBuffer(PixelBuffer* pb) {
 	ppBuft = pb;
 	return 0;
 }
 
-uint8_t drawChar(uint16_t x, uint16_t y, char c, uint16_t *xd){
-	int width = FONT_SIZE[c-32][0];
-	int start = FONT_SIZE[c-32][1];
+uint8_t drawChar(uint16_t x, uint16_t y, char c, uint16_t *xd, uint8_t d=0){
+	int width;
+	int start;
+	const uint8_t *fontp;
+	if(d==0){
+		width = FONT_SIZE[c-32][0];
+		start = FONT_SIZE[c-32][1];
+		fontp=FONT+start;
+	}/*else if(d==1){
+		width = FONT_SIZE_I[c-32][0];
+		start = FONT_SIZE_I[c-32][1];
+		fontp=FONT_I+start;
+	}else{
+		width = FONT_SIZE_B[c-32][0];
+		start = FONT_SIZE_B[c-32][1];
+		fontp=FONT_B+start;
+	}*/
+
 	for(uint8_t row=0;row<16; row++){
-		uint8_t font=FONT[start+row];
+		uint8_t font;
+		if(row>8){
+			font=*(fontp+row*2);
+		}else{
+			font=*(fontp+row);
+		}
+
+
 		for(uint8_t pix=0;pix<width;pix++){
 			if(font& (1<<(8-pix))){
 				ppBuft->add(BLACK, x+pix, y+row);
