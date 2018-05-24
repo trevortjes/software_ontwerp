@@ -65,7 +65,7 @@ uint8_t color(char *s) {
 	} else if (strcmp(s, "lichtmagenta") == 0) {
 			return LIGHT_MAGENTA;
 	}
-	return BLACK;
+	return 127;
 }
 Command::Command() {
 	// TODO Auto-generated constructor stub

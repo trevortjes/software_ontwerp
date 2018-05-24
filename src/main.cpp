@@ -56,7 +56,7 @@ int main(void) {
 	setTextPixelBuffer(&pBuf);
 	setBMPPixelBuffer(&pBuf);
 	clearScherm(0xFF);
-	drawText(1,1,"Wachten op input!",16);
+	drawText(1,1,"Wachten op input!",0,0);
 
 	pBuf.push();
 	while (1) {
