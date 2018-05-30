@@ -26,8 +26,6 @@ uint16_t sti(char *s) {
 
 uint8_t color(char *s) {
 
-
-
 	if (strcmp(s, "zwart") == 0) {
 		return BLACK;
 	} else if (strcmp(s, "rood") == 0) {
@@ -45,25 +43,25 @@ uint8_t color(char *s) {
 	} else if (strcmp(s, "grijs") == 0) {
 		return GRAY;
 	} else if (strcmp(s, "cyaan") == 0) {
-			return CYAN;
+		return CYAN;
 	} else if (strcmp(s, "magenta") == 0) {
-			return MAGENTA;
+		return MAGENTA;
 	} else if (strcmp(s, "geel") == 0) {
-			return YELLOW;
+		return YELLOW;
 	} else if (strcmp(s, "paars") == 0) {
-			return PURPLE;
+		return PURPLE;
 	} else if (strcmp(s, "roze") == 0) {
-			return PINK;
+		return PINK;
 	} else if (strcmp(s, "lichtblauw") == 0) {
-			return LIGHT_BLUE;
+		return LIGHT_BLUE;
 	} else if (strcmp(s, "lichtgroen") == 0) {
-			return LIGHT_GREEN;
+		return LIGHT_GREEN;
 	} else if (strcmp(s, "lichtrood") == 0) {
-			return LIGHT_RED;
+		return LIGHT_RED;
 	} else if (strcmp(s, "lichtcyaan") == 0) {
-			return LIGHT_CYAN;
+		return LIGHT_CYAN;
 	} else if (strcmp(s, "lichtmagenta") == 0) {
-			return LIGHT_MAGENTA;
+		return LIGHT_MAGENTA;
 	}
 	return 127;
 }
@@ -460,26 +458,27 @@ uint8_t Command::tekst() {
 		c[i] = *(this->commandString + i + k);
 		i++;
 	}
+	i++;
 	c[i] = '\0';
 	char s[20];
-		k += i;
-		i = 0;
-		while (*(this->commandString + i + k) != ',') {
-			s[i] = *(this->commandString + i + k);
-			i++;
-		}
+	k += i;
+	i = 0;
+	while (*(this->commandString + i + k) != ',') {
+		s[i] = *(this->commandString + i + k);
+		i++;
+	}
 	i++;
 	uint16_t col = sti(s);
 	k += i;
 
-	uint16_t b=0;
-	if(strcmp((this->commandString + i + k),"norm")==0){
-		b=0;
-	}else if(strcmp((this->commandString + i + k),"vet")==0){
-		b=1;
-	}else if(strcmp((this->commandString + i + k),"cursief")==0){
-		b=2;
+	uint16_t b = 0;
+	if (strcmp((this->commandString + k), "norm") == 0) {
+		b = 0;
+	} else if (strcmp((this->commandString + k), "vet") == 0) {
+		b = 1;
+	} else if (strcmp((this->commandString + k), "cursief") == 0) {
+		b = 2;
 	}
 
-	return drawText(x1,y1,c,col,b);
+	return drawText(x1, y1, c, col, b);
 }
