@@ -25,6 +25,13 @@ uint16_t sti(char *s) {
 }
 
 uint8_t color(char *s) {
+	char *a=s;
+	while(*a!='\0'){
+		if(*a=='\f'){
+			*a='\0';
+		}
+		a++;
+	}
 
 	if (strcmp(s, "zwart") == 0) {
 		return BLACK;

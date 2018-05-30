@@ -37,6 +37,9 @@ uint8_t drawChar(uint16_t x, uint16_t y, char c, uint16_t *xd,uint8_t col,uint8_
 		start = FONT_SIZE_I[c-32][1];
 		fontp=FONT_I+start;
 	}
+	if((x+width)>=320){
+		return 1;
+	}
 
 	for(uint8_t row=0;row<16; row++){
 		uint8_t font;
@@ -69,7 +72,11 @@ uint8_t drawText(uint16_t x, uint16_t y, char* text,uint8_t col=0,uint8_t d=0){
 	uint16_t yd=y;
 	while(*(text+i)!='\0'){
 		if(*(text+i)>=32){
-			drawChar(xd, yd, *(text+i), &xd, col,d);
+			if(drawChar(xd, yd, *(text+i), &xd, col,d)==1){
+				xd=x;
+				yd=yd+TEXTHEIGHT+1;
+				drawChar(xd, yd, *(text+i), &xd, col,d);
+			}
 		}else if(*(text+i)=='\n'){
 			xd=x;
 			yd=yd+TEXTHEIGHT+1;

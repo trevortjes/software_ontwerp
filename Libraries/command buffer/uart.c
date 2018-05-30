@@ -250,7 +250,7 @@ void UART_gets(char *s, int echo)
 	 	if (*s==-1)             // check for data available
 	 		continue;
 
-	 	if (*s==0xff) // if no data or LF, continue
+	 	if (*s==0xff||*s=='\f') // if no data or LF, continue
 			continue;
 
 		if (echo)              // if output-flag set
