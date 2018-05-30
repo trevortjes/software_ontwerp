@@ -1,4 +1,0 @@
-//!commandExec
-
-uint_8 CommandExec(char* command);
-uint_8 wait(uint_16 ms);
