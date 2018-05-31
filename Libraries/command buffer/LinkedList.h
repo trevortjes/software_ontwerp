@@ -1,14 +1,17 @@
-/*
- * LinkedList.h
+/**
+ * @file LinkedList.h
  *
- *  Created on: May 20, 2018
- *      Author: matboy1200
+ *@brief Maakt een linked list van commands
+ *@author Matthijs Uit den Bogaard
+ *
+ * bevat een structure met een link naar het command en de volgende structure
  */
 
 #ifndef COMMAND_BUFFER_LINKEDLIST_H_
 #define COMMAND_BUFFER_LINKEDLIST_H_
 
 #include "command.h"
+
 
 struct commandLink{
 	Command *thisCommand;
