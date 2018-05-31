@@ -2,7 +2,7 @@
  ******************************************************************************
  *@file clearScreen.h
  *@brief Bevat de functionaliteit om het scherm te wissen door
- *		 het scherm te vullen met één kleur
+ *		 het scherm te vullen met een kleur
  *@author Trevor van Ginkel
  *@author Matthijs Uit den Boogaard
  ******************************************************************************
@@ -14,7 +14,7 @@
 #define CLEAR_SCREEN_CLEARSCREEN_H_
 
 /**
- *@brief Vult het scherm met één kleur
+ *@brief Vult het scherm met een kleur
  *@param color De kleur die het scherm moet worden
  *@return foutcode mits er iets fout gaat
  */

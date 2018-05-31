@@ -2,7 +2,7 @@
  ******************************************************************************
  *@file clearScreen.cpp
  *@brief Bevat de functionaliteit om het scherm te wissen door
- *		 het scherm te vullen met één kleur
+ *		 het scherm te vullen met een kleur
  *@author Trevor van Ginkel
  *@author Matthijs Uit den Boogaard
  ******************************************************************************
@@ -12,7 +12,7 @@
 #include "stm32_ub_vga_screen.h"
 
 /**
- *@brief Vult het scherm met één kleur
+ *@brief Vult het scherm met een kleur
  *@param color De kleur die het scherm moet krijgen
  *@return Foutcode mits er iets fout gaat
  */
