@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- *@file bmp.h
+ *@file bmp.cpp
  *@brief Bevat de functies voor het tekenen van bitmaps
  *@author Trevor van Ginkel
  *@author Matthijs Uit den Boogaard
@@ -15,12 +15,24 @@
 PixelBuffer* ppBufBMP;
 
 
+/**
+ @brief Zorgt ervoor dat een lokale variabele extern gebruikt kan worden
+ @param p Pointer naar object van het type PixelBuffer
+ @return Geeft een foutcode terug mits er een fout is
+ */
 uint8_t setBMPPixelBuffer(PixelBuffer* pb)
 {
 	ppBufBMP = pb;
 	return 0;
 }
 
+/**
+ @brief Tekent een bitmap afbeelding
+ @param nr De index van de bitmap afbeelding
+ @param x3 Het x-coordinaat waar de bitmap afbeelding getekend moet worden
+ @param y3 Het y-coordinaat waar de bitmap afbeelding getekend moet worden
+ @return functie geeft een foutcode terug mits er een fout is
+ */
 uint8_t writeBMPROM(uint8_t nr, uint16_t x3, uint16_t y3)
 {
 	uint16_t i = 0;	//pixel teller op 0
