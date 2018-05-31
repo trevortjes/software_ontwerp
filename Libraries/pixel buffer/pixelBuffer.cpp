@@ -17,6 +17,8 @@ PixelBuffer::PixelBuffer() {
 }
 
 uint8_t PixelBuffer::add(uint8_t col, uint16_t x, uint16_t y) {
+	x--;
+	y--;
 	if(x>320||y>240){
 		return 2;
 	}

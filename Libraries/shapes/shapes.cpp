@@ -2,20 +2,22 @@
  * shapes.c
  *
  *  Created on: May 1, 2018
- *      Author: Matthijs Uit den Bogaard
+ *      Author: Matthijs Uit den Bogaard, Trevor van Ginkel
  */
+
 #include "shapes.h"
 #include <stdlib.h>
 #include <math.h>
 
-//#include "pixelBuffer.h"
+
 PixelBuffer* ppBuf;
 
-uint8_t setShapesPixelBuffer(PixelBuffer* pb) {
+uint8_t setShapesPixelBuffer(PixelBuffer* pb)
+{
 	ppBuf = pb;
 	return 0;
 }
-uint8_t pushBuffer() {
+	uint8_t pushBuffer() {
 	ppBuf->push();
 	return 0;
 }

@@ -191,6 +191,9 @@ uint8_t Command::lijn() {
 	}
 	c[i] = '\0';
 	uint8_t col = color(c);
+	if(x1>320||x1<0||y1>240||y1<0||x2>320||x2<0||y2>240||y2<0){
+		return 255;
+	}
 	return drawLine(x1, y1, x2, y2, col, d);
 }
 uint8_t Command::ellipse() {
@@ -247,6 +250,9 @@ uint8_t Command::ellipse() {
 	}
 	c[i] = '\0';
 	uint8_t col = color(c);
+	if(x2>320||x2<0||y2>240||y2<0){
+			return 255;
+		}
 	return drawEllip(x1, y1, x2, y2, col, 0, 0);
 }
 
@@ -304,6 +310,9 @@ uint8_t Command::rechthoek() {
 	}
 	c[i] = '\0';
 	uint8_t col = color(c);
+	if(x1>320||x1<0||y1>240||y1<0||x2>320||x2<0||y2>240||y2<0){
+			return 255;
+		}
 	return drawRect(x1, y1, x2, y2, col, 0);
 }
 
@@ -379,6 +388,9 @@ uint8_t Command::driehoek() {
 	}
 	c[i] = '\0';
 	uint8_t col = color(c);
+	if(x1>320||x1<0||y1>240||y1<0||x2>320||x2<0||y2>240||y2<0||x3>320||x3<0||y3>240||y3<0){
+			return 255;
+		}
 	return drawTri(x1, y1, x2, y2, x3, y3, col, 0);
 }
 
@@ -429,6 +441,9 @@ uint8_t Command::bitmap() {
 	c[i] = '\0';
 	i++;
 	uint16_t y1 = sti(c);
+	if(x1>320||x1<0||y1>240||y1<0){
+			return 255;
+		}
 	return writeBMPROM(nr, x1, y1);
 }
 uint8_t Command::tekst() {
@@ -486,6 +501,8 @@ uint8_t Command::tekst() {
 	} else if (strcmp((this->commandString + k), "cursief") == 0) {
 		b = 2;
 	}
-
+	if(x1>320||x1<0||y1>240||y1<0){
+			return 255;
+		}
 	return drawText(x1, y1, c, col, b);
 }

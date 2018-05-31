@@ -47,7 +47,6 @@ public:
 	 * @return de errorcode als het goed gaat wordt 0 gereturnt
 	 */
 	uint8_t push();
-
 };
 
 #endif //PIXELBUFFER_H
