@@ -222,7 +222,7 @@ uint8_t drawEllipFill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
 			double dx = (double) xp / (double) xrad;
 			double dy = (double) yp / (double) yrad;
 			if (dx * dx + dy * dy <= 1)
-				ppBuf->add(col, xp + x, yp + y); //voegt de berekende pixels toe aan de pixelbuffer
+				ppBuf->add(col, xp + x, yp + y); //voegt de berekende pixel toe aan de pixelbuffer
 		}
 	}
 	return 0;

@@ -84,5 +84,8 @@ uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
  */
 uint8_t drawEllipFill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
 		uint8_t col);
-
+/**
+ * @brief zorgt ervoor dat de front layer de pixelbuffer in de io layer kan pushen.
+ * @return error
+ */
 uint8_t pushBuffer();

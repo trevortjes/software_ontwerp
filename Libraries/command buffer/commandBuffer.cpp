@@ -1,8 +1,10 @@
-/*
- * commandBuffer.cpp
+/**
+ * *************************************************************************************
+ *@file commandBuffer.cpp
+ *@brief De buffer met alle commands
+ *@author Matthijs Uit den Bogaard
  *
- *  Created on: 16 mei 2018
- *      Author: trevo
+ *Een buffer met alle commando's die binnengekomen zijn er in.
  */
 
 #include "commandBuffer.h"
@@ -44,7 +46,6 @@ CommandBuffer::~CommandBuffer() {
 	free(this->first.thisCommand);
 	struct commandLink *loop = this->first.nextCommand;
 	while (loop != nullptr) {
-		//writeRs232("test");
 		free(loop->thisCommand);
 		struct commandLink *freed = loop;
 		loop = loop->nextCommand;
@@ -56,7 +57,6 @@ void CommandBuffer::clearBuffer() {
 	free(this->first.thisCommand);
 	struct commandLink *loop = this->first.nextCommand;
 	while (loop != nullptr) {
-		//writeRs232("test");
 		free(loop->thisCommand);
 		struct commandLink *freed = loop;
 		loop = loop->nextCommand;
@@ -129,28 +129,3 @@ uint8_t CommandBuffer::checkForCommands() {
 	return 0;
 
 }
-
-/*
-
-
-
-
- char* CommandBuffer::readRs232()
- {
- UART_gets(stringBuf, 0);
- return stringBuf;
- }
-
- void CommandBuffer::writeRs232(char* text)
- {
- UART_puts(text);
- }
-
- void CommandBuffer::Echo()
- {
-
- UART_puts(this->readRs232());
- }
-
-
- */

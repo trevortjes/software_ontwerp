@@ -24,22 +24,27 @@ private:
 	char* commandString;
 	/**
 	 * @brief Voert het commando clear uit
+	 * return Errorcode
 	 */
 	uint8_t clear(); //done
 	/**
 	 * @brief Voert het commando lijn uit
+	 * return Errorcode
 	 */
 	uint8_t lijn(); //done
 	/**
 	 * @brief Voert het commando ellipse uit
+	 * return Errorcode
 	 */
 	uint8_t ellipse(); //done
 	/**
 	 * @brief Voert het commando rechthoek uit
+	 * return Errorcode
 	 */
 	uint8_t rechthoek(); //done
 	/**
 	 * @brief Voert het commando driehoek uit
+	 * return Errorcode
 	 */
 	uint8_t driehoek(); //done
 	/**
@@ -48,19 +53,32 @@ private:
 	uint8_t tekst();
 	/**
 	 * @brief Voert het commando bitmap uit
+	 * return Errorcode
 	 */
 	uint8_t bitmap();
 	/**
 	 * @brief Voert het commando wacht uit
+	 * return Errorcode
 	 */
 	uint8_t wacht(); //done
 
 public:
 	Command(char* s);
+	/**
+	 * @brief destructor die het command Freeed uit het gegeheugen
+	 */
 	~Command();
+	/**
+	 * @brief geeft het commando terug.
+	 * return Commandstring
+	 */
 	char *getCommand() {
 		return commandString;
 	}
+	/**
+	 * @brief Voert het commando uit
+	 * return errorcode
+	 */
 	uint8_t execute();
 };
 
