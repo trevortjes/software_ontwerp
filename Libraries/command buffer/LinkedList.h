@@ -12,7 +12,9 @@
 
 #include "command.h"
 
-
+/**
+ * @brief Een structure die een command bevat en een pointer naar het volgende command
+ */
 struct commandLink{
 	Command *thisCommand;
 	struct commandLink *nextCommand;

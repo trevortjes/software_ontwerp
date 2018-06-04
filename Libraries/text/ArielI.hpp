@@ -1,6 +1,11 @@
-// 
-//  Font data for Arial 12pt
-// 
+/**
+ * *************************************************************************************
+ *@file ArielI.h
+ *@brief Font data for Arial Italic 12pt
+ *
+ */
+
+
 
 #define FONT_SIZE_I	arial_i12ptDescriptors
 #define FONT_I 		arial_i12ptBitmaps
