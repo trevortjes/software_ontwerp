@@ -39,23 +39,23 @@ uint8_t pushBuffer() {
  */
 uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
 		uint8_t col, uint8_t t) {
-	int dx = abs(x2 - x1), sx = x1 < x2 ? 1 : -1;
-	int dy = abs(y2 - y1), sy = y1 < y2 ? 1 : -1;
-	int err = (dx > dy ? dx : -dy) / 2, e2;
-	if (t > 1) {
+	int dx = abs(x2 - x1), sx = x1 < x2 ? 1 : -1;	//berekening voor het verschil in x richting
+	int dy = abs(y2 - y1), sy = y1 < y2 ? 1 : -1;	//berekening voor het verschil in y richting
+	int err = (dx > dy ? dx : -dy) / 2, e2;			//berekening voor de lijnerror
+	if (t > 1) {									//Wanneer de lijndikte groter dan 1 is
 		if (dx > dy) {
 			for (int i = 1; i < t; i++) {
-				drawLine(x1, y1 + i, x2, y2 + i, col);
+				drawLine(x1, y1 + i, x2, y2 + i, col);//tekent een lijn naast de oorspronkelijke lijn
 			}
 		} else {
 			for (int i = 1; i < t; i++) {
-				drawLine(x1 + i, y1, x2 + i, y2, col);
+				drawLine(x1 + i, y1, x2 + i, y2, col);//idem
 			}
 		}
 	}
 	while (1) {
-		ppBuf->add(col, x1, y1);
-		if (x1 == x2 && y1 == y2)
+		ppBuf->add(col, x1, y1);					//voegt de pixels toe aan de pixelbuffer
+		if (x1 == x2 && y1 == y2)					//lijnerror correctie
 			break;
 		e2 = err;
 		if (e2 > -dx) {
@@ -83,21 +83,21 @@ uint8_t drawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
  */
 uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2,
 		uint8_t col, uint16_t fill) {
-	if (x3 == x2 || y3 == y2) {
-		return 2;
+	if (x3 == x2 || y3 == y2) {	//x3 mag niet gelijk zijn aan x2 en y3 niet aan y2
+		return 2;				//foutcode 2
 	}
-	if (x3 > x2) {
+	if (x3 > x2) {				//swappen van x-coordinaten
 		uint16_t x = x3;
 		x3 = x2;
 		x2 = x;
 	}
-	if (y3 < y2) {
+	if (y3 < y2) {				//swappen van y-coordinaten
 		uint16_t y = y3;
 		y3 = y2;
 		y2 = y;
 	}
 
-	if (drawLine(x3, y3, x2, y3, col)) {
+	if (drawLine(x3, y3, x2, y3, col)) {	//tekenen van de 4 lijnen waaruit de rechthoek bestaat
 		return 1;
 	}
 	if (drawLine(x3, y2, x3, y3, col)) {
@@ -109,9 +109,9 @@ uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2,
 	if (drawLine(x2, y2, x3, y2, col)) {
 		return 1;
 	}
-	if (fill) {
+	if (fill) { //Als vulling gewenst is
 		if (x2 != x3 && y2 != y3)
-			drawRect(x3 + 1, y3 - 1, x2 - 1, y2 + 1, col, 1);
+			drawRect(x3 + 1, y3 - 1, x2 - 1, y2 + 1, col, 1); //vult de rechthoek met steeds kleinere rechthoeken
 	}
 	return 0;
 }
@@ -130,7 +130,7 @@ uint8_t drawRect(uint16_t x3, uint16_t y3, uint16_t x2, uint16_t y2,
  */
 uint8_t drawTri(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3,
 		uint16_t y3, uint8_t col, uint16_t fill) {
-	if (drawLine(x2, y2, x1, y1, col)) {
+	if (drawLine(x2, y2, x1, y1, col)) {	//Tekent de drie lijnen waar de driehoek uit bestaat
 		return 1;
 	}
 	if (drawLine(x3, y3, x1, y1, col)) {
@@ -160,10 +160,11 @@ uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
 	float p;
 
 	if (fill == true) {
-		drawEllipFill(x, y, xrad, yrad, fillCol);
+		drawEllipFill(x, y, xrad, yrad, fillCol);//roept andere functie aan die
+												 //verantwoordelijk is voor gevulde ellipsen
 	}
 
-	//Region 1
+	//Eerste region
 	p = yrad * yrad - xrad * xrad * yrad + xrad * xrad / 4;
 	xp = 0;
 	yp = yrad;
@@ -176,15 +177,15 @@ uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
 			yp--;
 			p = p + 2 * yrad * yrad * xp - 2 * xrad * xrad * yp - yrad * yrad;
 		}
-		ppBuf->add(col, x + xp, y + yp);
+		ppBuf->add(col, x + xp, y + yp);	//voegt de berekende pixels toe aan de pixelbuffer
 		ppBuf->add(col, x + xp, y - yp);
 		ppBuf->add(col, x - xp, y + yp);
 		ppBuf->add(col, x - xp, y - yp);
-		ppBuf->add(col, x, y + yrad);
-		ppBuf->add(col, x, y - yrad);
+		ppBuf->add(col, x, y + yrad);	   //compensatie voor missende pixel
+		ppBuf->add(col, x, y - yrad);	   //idem
 	}
 
-	//Region 2
+	//Tweede region
 	p = yrad * yrad * (xp + 0.5) * (xp + 0.5)
 			+ xrad * xrad * (yp - 1) * (yp - 1) - xrad * xrad * yrad * yrad; //HIER
 	while (yp > 0) {
@@ -196,7 +197,7 @@ uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
 			yp--;
 			p = p - 2 * xrad * xrad * yp + xrad * xrad;
 		}
-		ppBuf->add(col, (x) + xp, y + yp);
+		ppBuf->add(col, (x) + xp, y + yp);	//voegt de berekende pixels toe aan de pixelbuffer
 		ppBuf->add(col, (x) + xp, y - yp);
 		ppBuf->add(col, (x) - xp, y + yp);
 		ppBuf->add(col, (x) - xp, y - yp);
@@ -216,12 +217,12 @@ uint8_t drawEllip(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
 uint8_t drawEllipFill(uint16_t x, uint16_t y, uint16_t xrad, uint16_t yrad,
 		uint8_t col) //met alleen fill
 		{
-	for (int yp = -yrad; yp <= yrad; yp++) {
+	for (int yp = -yrad; yp <= yrad; yp++) { //algoritme voor het tekenen van een gevulde cirkel
 		for (int xp = -xrad; xp <= xrad; xp++) {
 			double dx = (double) xp / (double) xrad;
 			double dy = (double) yp / (double) yrad;
 			if (dx * dx + dy * dy <= 1)
-				ppBuf->add(col, xp + x, yp + y);
+				ppBuf->add(col, xp + x, yp + y); //voegt de berekende pixels toe aan de pixelbuffer
 		}
 	}
 	return 0;
