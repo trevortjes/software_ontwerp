@@ -1,8 +1,9 @@
-/*
- * collors.h
- *
- *  Created on: May 15, 2018
- *      Author: matboy1200
+/**
+ * *************************************************************************************
+ *@file collors.h
+ *@brief Bevat de defines voor de gebruikte kleuren
+ *@author Matthijs Uit den Bogaard
+
  */
 
 #ifndef COLLORS_H_
